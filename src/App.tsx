@@ -1,11 +1,11 @@
 import styled from 'styled-components'
-import Characters from './pages/characters/index'
+import Main from './pages/Main/index'
 
 function App() {
 
   return (
     <AppContainer>
-      <Characters />
+      <Main />
     </AppContainer>
   )
 }

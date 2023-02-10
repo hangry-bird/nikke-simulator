@@ -20,8 +20,12 @@ interface Skill {
 export interface NikkeInfo {
     enName: string;
     krName: string;
-    busType: number;
+
+    fullBodyImage: string;
+
+    bustType: number;
     attack: Attack;
+
     skill1: Skill;
     skill2: Skill;
     skill3: Skill;

@@ -1,10 +1,14 @@
-import { useState } from 'react'
 import { NikkeInfo } from './interfaces'
+// images
+import RapiFullBodyShot from '@images/nikke/fullBody/rapi.png'
+import EmmaFullBodyShot from '@images/nikke/fullBody/emma.png'
+
 
 export const rapi: NikkeInfo = {
     enName: "rapi",
     krName: "라피",
-    busType: 3,
+    bustType: 3,
+    fullBodyImage: RapiFullBodyShot,
     attack: {
         gun_type: "소총",
         max_shots: 60,
@@ -56,7 +60,8 @@ export const rapi: NikkeInfo = {
 export const emma: NikkeInfo = {
     enName: "emma",
     krName: "엠마",
-    busType: 1,
+    bustType: 1,
+    fullBodyImage: EmmaFullBodyShot,
     attack: {
         gun_type: "머신건",
         max_shots: 300,
