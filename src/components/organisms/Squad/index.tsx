@@ -8,10 +8,11 @@ import Label from '@components/atoms/Label'
 
 
 interface SquadProps{
-    squadNikkes: NikkeInfo[]
+    squadNikkes: NikkeInfo[];
+    onClickNikke?: (enName: string) => void;
 }
 
-const Squad = ({ squadNikkes }: SquadProps) => {
+const Squad = ({ squadNikkes, onClickNikke }: SquadProps) => {
     return (
         <SquadContainer>
             {
@@ -20,12 +21,12 @@ const Squad = ({ squadNikkes }: SquadProps) => {
                     const nikke: NikkeInfo | Boolean = squadNikkes[index] ?? false
 
                     return (
-                        <NikkeWrap key={index}>
+                        <NikkeWrap key={index} pointer={nikke ? true: false} onClick={() => nikke && onClickNikke?.(nikke?.enName)}>
                             <NikkeImageWrap>
                                 <Img src={nikke?.fullBodyImage} width={"100px"} />
                             </NikkeImageWrap>
                             <NikkeLabelWrap>
-                                <Label>{nikke?.krName}</Label>
+                                <Label pointer>{nikke?.krName}</Label>
                             </NikkeLabelWrap>
                         </NikkeWrap>
                     )
@@ -43,34 +44,38 @@ const SquadContainer = styled.div`
     align-items: center;
 
     width: 100%;
-    height: 100px;
+    height: 120px;
     
-    border: 1px solid red;
+    border-bottom: 1px solid #000;
     background-color: #F5F5F5;
 
     overflow: hidden;
 `
-const NikkeWrap = styled.div`
+type NikkeWrapProps= {
+    pointer?: boolean;
+}
+const NikkeWrap = styled.div<NikkeWrapProps>`
     display: flex;
     flex-direction: column;
     align-items: center;
 
-    
+    cursor: ${({pointer}) => pointer && "pointer"};
 `
 const NikkeImageWrap = styled.div`
     display: flex;
     align-items: flex-start;
     justify-content: center;
 
-    width: 60px;
-    height: 60px;
-    
+    width: 80px;
+    max-width: 80px;
+    height: 80px;
+
     border: 1px solid #D8D8D8;
     border-radius: 4px;
+    background-color: #fff;
 
     overflow: hidden;
 `
 const NikkeLabelWrap = styled.div`
     height: 20px;
-    
 `

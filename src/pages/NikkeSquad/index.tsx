@@ -7,6 +7,7 @@ import { NikkeInfo } from '@src/NikkeDatas/interfaces';
 // atoms
 import Portrait from '@src/components/atoms/Portrait'
 import Img from '@src/components/atoms/Image'
+import Label from '@src/components/atoms/Label'
 import { H2, H3, H4 } from '@src/components/atoms/Header'
 // molecules
 import SkillDescription from '@components/molecules/SkillDescription'
@@ -21,7 +22,6 @@ const NikkeSquadPage = () => {
 
     useEffect(() => {
         document.body.style.overflow = "hidden";
-
         return () => { document.body.style.overflow = "auto"; }
     }, [])
 
@@ -32,8 +32,13 @@ const NikkeSquadPage = () => {
             deleteNikke(hasNikkeIndex)
         }
         else{
-            addNikke(nikke)
+            squadNikkes.length < 5 && addNikke(nikke)
         }
+    }
+
+    const handleSquadRemoveSquad = (enName: string) => {
+        const hasNikkeIndex = squadNikkes.findIndex(squadNikke => squadNikke.enName === enName)
+        deleteNikke(hasNikkeIndex)
     }
 
 
@@ -43,11 +48,13 @@ const NikkeSquadPage = () => {
             <NikkeSelection>
                 <Squad 
                     squadNikkes={squadNikkes}
+                    onClickNikke={handleSquadRemoveSquad}
                 />
 
                 <NikkeListContainer>
                     <PopulateNikkes
                         nikkes={nikkeList}
+                        squadNikkes={squadNikkes}
                         onClick={(nikke: NikkeInfo) => handleNikkeClick(nikke)}
                     />
                 </NikkeListContainer>
@@ -66,21 +73,32 @@ export default NikkeSquadPage;
 
 type NikkeProps = {
     nikkes: NikkeInfo[];
+    squadNikkes: NikkeInfo[],
     onClick: (nikke: NikkeInfo) => void;
 }
 
-const PopulateNikkes: React.FC<NikkeProps> = ({ nikkes, onClick }) => {
+const PopulateNikkes: React.FC<NikkeProps> = ({ nikkes, squadNikkes, onClick }) => {
+
     return (
         <>
             {
                 nikkes.map(nikke => {
+                    const hasNikkeIndex = squadNikkes.findIndex(squadNikke => squadNikke.enName === nikke.enName)
+
                     return (
                         <Portrait
                             key={nikke.enName}
                             onClick={() => onClick(nikke)}
                         >
-                            <label>{nikke.krName}</label>
-                            <Img src={nikke.fullBodyImage} alt="asd" />
+                            <Label bold>{nikke.krName}</Label>
+                            <Img src={nikke.fullBodyImage} alt={`${nikke.enName} 이미지`} />
+                            {
+                                hasNikkeIndex >= 0 &&
+                                <PortraitActiveWrap>
+                                    <PortraitActive />
+                                </PortraitActiveWrap>
+                            }
+                            
                         </Portrait>
                     )
                 })
@@ -97,6 +115,9 @@ const MainContainer = styled.div`
     height: 100%;
 `
 const NikkeSelection = styled.div`
+    display: flex;
+    flex-direction: column;
+
     width: 60%;
     height: 100%;
 `
@@ -110,16 +131,36 @@ const SkillDescriptionContainer = styled.div`
     background-color: #fff;
     overflow: auto;
 `
-
 const NikkeListContainer = styled.div`
     display: flex;
-    justify-content: space-evenly;
+    justify-content: center;
+    flex-wrap: wrap;
 
-    width: 100%;
+    width: auto;
     height: auto;
-    
-    border: 1px solid red;
+
     background-color: #F5F5F5;
 
-    overflow: hidden;
+    overflow: auto;
+
+    & > div{
+        background-color: #fff;
+        margin: 8px 8px;
+    }
+`
+const PortraitActiveWrap = styled.div`
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+
+    border: 4px solid #00A9FA;
+`
+const PortraitActive = styled.div`
+    width: 100%;
+    height: 100%;
+
+    opacity: 0.2;
+    background-color: blue;
 `
