@@ -79,6 +79,13 @@ type NikkeProps = {
 
 const PopulateNikkes: React.FC<NikkeProps> = ({ nikkes, squadNikkes, onClick }) => {
 
+    // 이름 오름차순 정렬
+    nikkes = nikkes.sort((a, b) => {
+        if (a.krName < b.krName) return -1;
+        if (a.krName > b.krName) return 1;
+        return 0;
+      });
+
     return (
         <>
             {
