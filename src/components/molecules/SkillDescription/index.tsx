@@ -219,7 +219,12 @@ const AttackArea = styled.div`
     margin-top: 8px;
 `
 const GunImageWrap = styled.div`
-    width: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    min-width: 44px;
+    max-width: 44px;
     margin: 0 8px;
 `
 const GunExplanationContainer = styled.div`
