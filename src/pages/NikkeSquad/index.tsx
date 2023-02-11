@@ -19,6 +19,12 @@ import useSquad from '@stores/Main'
 const NikkeSquadPage = () => {
     const { squadNikkes, addNikke, deleteNikke } = useSquad();
 
+    useEffect(() => {
+        document.body.style.overflow = "hidden";
+
+        return () => { document.body.style.overflow = "auto"; }
+    }, [])
+
     const handleNikkeClick = (nikke: NikkeInfo) => {
         const hasNikkeIndex = squadNikkes.findIndex(squadNikke => squadNikke.enName === nikke.enName)
         // has Nikke
@@ -30,9 +36,6 @@ const NikkeSquadPage = () => {
         }
     }
 
-    useEffect(() => {
-        console.log(squadNikkes)
-    }, [squadNikkes])
 
     return (
         <MainContainer>
@@ -105,6 +108,7 @@ const SkillDescriptionContainer = styled.div`
 
     border-left: 1px solid #000;
     background-color: #fff;
+    overflow: auto;
 `
 
 const NikkeListContainer = styled.div`
