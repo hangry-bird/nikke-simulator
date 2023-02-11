@@ -20,7 +20,8 @@
       "@src/*": ["src/*"],
       "@components/*": ["src/components/*"],
       "@images/*": ["src/images/*"],
-      "@stores/*": ["src/stores/*"]
+      "@stores/*": ["src/stores/*"],
+      "@types/*": ["src/types/*"]
     }
   },
   "include": ["src"],
