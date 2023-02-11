@@ -4,31 +4,33 @@ interface Attack {
     max_shots: number;
     reload_time: number;
     operation_type: string;
+    activation_condition: string;
+    description: string[]
 }
 type SkillDescription = string
 type SkillDetail = {
-    skill_activation_condition: string,
-    skill_description: SkillDescription[]
+    activation_condition: string,
+    description: SkillDescription[]
 }
 interface Skill {
-    skill_order_type: "one" | "two" | "bust",
-    skill_type: "active" | "passive",
+    order_type: "one" | "two" | "bust",
+    type: "액티브" | "패시브",
     cooldown_time?: number,
-    skill_name: string,
-    skill_detail: SkillDetail[]
+    name: string,
+    detail: SkillDetail[]
 }
 
 export interface NikkeInfo {
+    company: "elysion" | "tetra" | "missilis"
+    class: "화력형" | "지원형" | "방어형"
+    squad: string,
     enName: string;
     krName: string;
-
+    property: "작열" | "수냉" | "철갑" | "풍압" | "전격";
     fullBodyImage: string;
 
     bustType: number;
     attack: Attack;
 
     skills?: Skill[]
-    // skill1: Skill;
-    // skill2: Skill;
-    // skill3: Skill;
 }

@@ -34,13 +34,13 @@ const SkillDescription = ({ nikkes }: SquadProps) => {
                                         <SkillContainer>
                                             <SkillTitleContainer>
                                                 <SkillOrderWrap>
-                                                    <H3 fs14>{replaceSkillType(skill.skill_order_type)}</H3>
+                                                    <H3 fs14>{replaceSkillType(skill.order_type)}</H3>
                                                 </SkillOrderWrap>
-                                                <Label>{skill.skill_name}</Label>
+                                                <Label>{skill.name}</Label>
                                             </SkillTitleContainer>
                                             <SkillContentContainer>
                                                 <BustTypeWrap>
-                                                    <Span fs12 color={"#B3B3B3"}>{skill.skill_type === "passive" ? "패시브" : "액티브"}</Span>
+                                                    <Span fs12 color={"#B3B3B3"}>{skill.type}</Span>
                                                     {
                                                         skill.cooldown_time &&
                                                         <Span fs12 color={"#B3B3B3"}>재사용 시간 {skill.cooldown_time}초</Span>
@@ -48,13 +48,13 @@ const SkillDescription = ({ nikkes }: SquadProps) => {
                                                     
                                                 </BustTypeWrap>
                                                 {
-                                                    skill.skill_detail.map((skill, index: number) => {
+                                                    skill.detail.map((skill, index: number) => {
                                                         return (
                                                             <SkillDetailWrap key={index}>
                                                                 <>
-                                                                    <P bold fs14>■ {skill.skill_activation_condition}</P>
+                                                                    <P bold fs14>■ {skill.activation_condition}</P>
                                                                     {
-                                                                        skill.skill_description.map(descr => {
+                                                                        skill.description.map(descr => {
                                                                             return (
                                                                                 <P bold fs14 color={"#33ABE7"}>{descr}</P>
                                                                             )
