@@ -1,5 +1,8 @@
 import React, { useEffect, useState } from 'react'
 import styled from 'styled-components'
+import Toggle from 'react-toggle'
+
+import "react-toggle/style.css"
 
 import nikkeList from '@src/NikkeDatas/index';
 import { NikkeInfo } from '@src/NikkeDatas/interfaces';
@@ -18,6 +21,9 @@ import useSquad from '@stores/Main'
 
 
 const NikkeSquadPage = () => {
+
+    const [isToggle, setIsToggle] = useState(false)
+
     const { squadNikkes, addNikke, deleteNikke } = useSquad();
 
     useEffect(() => {
@@ -61,6 +67,13 @@ const NikkeSquadPage = () => {
             </NikkeSelection>
 
             <SkillDescriptionContainer>
+
+                <Toggle
+                    // defaultChecked={true}
+                    icons={false}
+                    onChange={() => setIsToggle(prev => !prev)} 
+                />
+
                 <SkillDescription 
                     nikkes={squadNikkes}
                 />
