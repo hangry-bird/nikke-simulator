@@ -5,6 +5,7 @@ import { NikkeInfo } from '@src/NikkeDatas/interfaces';
 // atoms
 import Img from '@components/atoms/Image'
 import Label from '@components/atoms/Label'
+import Span from '@components/atoms/Span'
 import { H2, H3, H4 } from '@src/components/atoms/Header'
 import P from '@components/atoms/P'
 
@@ -39,7 +40,12 @@ const SkillDescription = ({ nikkes }: SquadProps) => {
                                             </SkillTitleContainer>
                                             <SkillContentContainer>
                                                 <BustTypeWrap>
-                                                    <H4 fs12 color={"#B3B3B3"}>{skill.skill_type === "passive" ? "패시브" : "액티브"}</H4>
+                                                    <Span fs12 color={"#B3B3B3"}>{skill.skill_type === "passive" ? "패시브" : "액티브"}</Span>
+                                                    {
+                                                        skill.cooldown_time &&
+                                                        <Span fs12 color={"#B3B3B3"}>재사용 시간 {skill.cooldown_time}초</Span>
+                                                    }
+                                                    
                                                 </BustTypeWrap>
                                                 {
                                                     skill.skill_detail.map((skill, index: number) => {
@@ -87,8 +93,20 @@ const replaceSkillType = (skillType: "one" | "two" | "bust") => {
 
 
 const SkillDescriptionArea = styled.div`
+    &:not(:first-of-type){
+        padding-top: 12px;
+    }
+
     &:not(:last-of-type){
-        margin-bottom: 12px;
+        padding: 0 0 12px;
+        /* border-bottom: 1px solid #F2F2F2; */
+    }
+    > H2{
+        margin-bottom: 6px;
+
+        text-align: center;
+        border-radius: 12px;
+        /* border-bottom: 1px solid #F2F2F2; */
     }
 `
 const SkillContainer = styled.div`
@@ -127,6 +145,9 @@ const SkillContentContainer = styled.div`
     background-color: #F2F2F2;
 `
 const BustTypeWrap = styled.div`
+    display: flex;
+    justify-content: space-between;
+
     width: 100%;
     height: auto;
     border-bottom: 1px solid #DBDBDB;
