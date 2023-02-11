@@ -23,9 +23,10 @@ const PortraitContainer = styled.div`
     position: relative;
 
     width: 160px;
+    min-width: 160px;
     height: 200px;
     
-    border: 1px solid red;
+    border: 2px solid #D8D8D8;
 
     overflow: hidden;
     cursor: pointer;
