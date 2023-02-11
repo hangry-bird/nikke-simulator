@@ -16,6 +16,8 @@ const Label = styled.label<LabelProps>`
 
     font-weight: ${({bold}) => bold && "700"};
     color: ${({color}) => color || "#000"};
+
+    cursor: ${({pointer}) => pointer && "pointer"};
 `;
 
 export default Label;
