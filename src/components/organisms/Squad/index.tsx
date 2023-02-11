@@ -54,12 +54,18 @@ const NikkeWrap = styled.div`
     display: flex;
     flex-direction: column;
     align-items: center;
+
+    
 `
 const NikkeImageWrap = styled.div`
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+
     width: 60px;
     height: 60px;
     
-    border: 1px solid red;
+    border: 1px solid #D8D8D8;
     border-radius: 4px;
 
     overflow: hidden;
