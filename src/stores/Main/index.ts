@@ -1,36 +1,22 @@
 import create from 'zustand';
+import { NikkeInfo } from '@src/NikkeDatas/interfaces';
+
 
 interface MainState {
-    squadNikkes: Set<string>;
-    popNikke: (enName: string) => void;
-    removeNikke: (enName: string) => void;
-    // increment: (value: number) => void;
-    // decrement: () => void;
+    squadNikkes: NikkeInfo[];
+
+    addNikke: (nikke: NikkeInfo) => void;
+    deleteNikke: (index: number) => void;
 }
 
 const useCounter = create<MainState>(set => ({
-    squadNikkes: new Set<string>(),
-    
-    popNikke: (enName: string) => {
-        set((state) => {
-            state.squadNikkes.add(enName);
-            return { ...state, squadNikkes: new Set(state.squadNikkes) };
-        });
-    },
-
-    removeNikke: (enName: string) => {
-        set((state) => {
-            state.squadNikkes.delete(enName);
-            return { ...state, squadNikkes: new Set(state.squadNikkes) };
-        });
-    },
-
-    // popNikke: (enName: string) => set(state => ({ squadNikkes: [...state.squadNikkes, enName]  })),
-    
-
-    // increment: (value: number) => set(state => ({ count: state.count + value })),
-    // decrement: () => set(state => ({ count: state.count - 1 }))
-  
+    squadNikkes: [],
+    addNikke: (nikke: NikkeInfo) => set(state => ({ squadNikkes: [...state.squadNikkes, nikke]  })),
+    deleteNikke: (index: number) => set(state => {
+        const tempNikkes = [...state.squadNikkes]
+        tempNikkes.splice(index, 1);
+        return { ...state, squadNikkes: tempNikkes }
+    }),
 }));
 
 export default useCounter;

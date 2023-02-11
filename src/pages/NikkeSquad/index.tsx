@@ -1,25 +1,32 @@
 import React, { useEffect, useState } from 'react'
 import styled from 'styled-components'
 
-import nikkeList from '@src/Nikkess/index';
-import { NikkeInfo } from '@src/Nikkess/interfaces';
+import nikkeList from '@src/NikkeDatas/index';
+import { NikkeInfo } from '@src/NikkeDatas/interfaces';
 
 // atoms
 import Portrait from '@src/components/atoms/Portrait'
 import Img from '@src/components/atoms/Image'
+import { H2, H3, H4 } from '@src/components/atoms/Header'
+// molecules
+import SkillDescription from '@components/molecules/SkillDescription'
+// organisms
+import Squad from '@src/components/organisms/Squad';
 // stores
-import useCounter from '@stores/Main'
+import useSquad from '@stores/Main'
 
 
-const MainPage = () => {
-    const { squadNikkes, popNikke, removeNikke } = useCounter();
+const NikkeSquadPage = () => {
+    const { squadNikkes, addNikke, deleteNikke } = useSquad();
 
-    const handleNikkeClick = (enName: string) => {
-        if(squadNikkes.has(enName)){
-            removeNikke(enName)
+    const handleNikkeClick = (nikke: NikkeInfo) => {
+        const hasNikkeIndex = squadNikkes.findIndex(squadNikke => squadNikke.enName === nikke.enName)
+        // has Nikke
+        if(hasNikkeIndex >= 0){
+            deleteNikke(hasNikkeIndex)
         }
         else{
-            popNikke(enName)
+            addNikke(nikke)
         }
     }
 
@@ -31,30 +38,32 @@ const MainPage = () => {
         <MainContainer>
 
             <NikkeSelection>
-                <SquadContainer>
-
-                </SquadContainer>
+                <Squad 
+                    squadNikkes={squadNikkes}
+                />
 
                 <NikkeListContainer>
                     <PopulateNikkes
                         nikkes={nikkeList}
-                        onClick={(enName: string) => handleNikkeClick(enName)}
+                        onClick={(nikke: NikkeInfo) => handleNikkeClick(nikke)}
                     />
                 </NikkeListContainer>
             </NikkeSelection>
 
             <SkillDescriptionContainer>
-
+                <SkillDescription 
+                    nikkes={squadNikkes}
+                />
             </SkillDescriptionContainer>
         </MainContainer>
     )
 }
-export default MainPage;
+export default NikkeSquadPage;
 
 
 type NikkeProps = {
     nikkes: NikkeInfo[];
-    onClick: (enName: string) => void;
+    onClick: (nikke: NikkeInfo) => void;
 }
 
 const PopulateNikkes: React.FC<NikkeProps> = ({ nikkes, onClick }) => {
@@ -65,7 +74,7 @@ const PopulateNikkes: React.FC<NikkeProps> = ({ nikkes, onClick }) => {
                     return (
                         <Portrait
                             key={nikke.enName}
-                            onClick={() => onClick(nikke.enName)}
+                            onClick={() => onClick(nikke)}
                         >
                             <label>{nikke.krName}</label>
                             <Img src={nikke.fullBodyImage} alt="asd" />
@@ -88,22 +97,16 @@ const NikkeSelection = styled.div`
     width: 60%;
     height: 100%;
 `
+
 const SkillDescriptionContainer = styled.div`
     width: 40%;
     height: 100%;
-`
-const SquadContainer = styled.div`
-    display: flex;
-    justify-content: space-evenly;
+    padding: 16px;
 
-    width: 100%;
-    height: 100px;
-    
-    border: 1px solid red;
-    background-color: #F5F5F5;
-
-    overflow: hidden;
+    border-left: 1px solid #000;
+    background-color: #fff;
 `
+
 const NikkeListContainer = styled.div`
     display: flex;
     justify-content: space-evenly;
