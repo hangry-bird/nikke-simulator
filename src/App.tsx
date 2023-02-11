@@ -1,11 +1,11 @@
 import styled from 'styled-components'
-import Main from './pages/Main/index'
+import Router from './Router';
 
 function App() {
 
   return (
     <AppContainer>
-      <Main />
+      <Router />
     </AppContainer>
   )
 }
