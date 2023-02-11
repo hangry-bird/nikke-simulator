@@ -1,10 +1,12 @@
-div, label, span, section, article{
-    margin:0
+* { box-sizing:border-box; }
+div, label, span, section, article,
+label, span, p, h1, h2, h3, h4, h5, h6, button{
+    margin: 0;
 }
 
-label, span, h1, h2, h3, h4, h5, h6, button{
+label, span, p, h1, h2, h3, h4, h5, h6, button{
     /* color: #FFF; */
-    font-weight: 700;
+    /* font-weight: 700; */
 }
 
 #root, html, body{
