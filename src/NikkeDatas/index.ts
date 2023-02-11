@@ -11,7 +11,7 @@ import BridFullBodyShot from '@images/nikke/fullBody/brid.png'
 import SolineFullBodyShot from '@images/nikke/fullBody/soline.png'
 import DieselFullBodyShot from '@images/nikke/fullBody/diesel.png'
 import VestiFullBodyShot from '@images/nikke/fullBody/vesti.png'
-// import EunhwaFullBodyShot from '@images/nikke/fullBody/eunhwa.png'
+import EunhwaFullBodyShot from '@images/nikke/fullBody/eunhwa.png'
 import GuillotineFullBodyShot from '@images/nikke/fullBody/guillotine.png'
 import MaidenFullBodyShot from '@images/nikke/fullBody/maiden.png'
 import HelmFullBodyShot from '@images/nikke/fullBody/helm.png'
@@ -588,7 +588,7 @@ export const eunhwa: NikkeInfo = {
     krName: "은화",
     bustType: 3,
     property: "작열",
-    fullBodyImage: VestiFullBodyShot,
+    fullBodyImage: EunhwaFullBodyShot,
     attack: {
         gun_type: "저격소총",
         max_shots: 6,
