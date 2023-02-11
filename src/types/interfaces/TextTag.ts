@@ -11,4 +11,6 @@ export interface TextTag {
     fs24?: boolean;
 
     color?: string;
+
+    pointer?: boolean;
 }
