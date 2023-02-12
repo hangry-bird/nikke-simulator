@@ -1,7 +1,8 @@
 * { box-sizing:border-box; }
 div, label, span, section, article,
-label, span, p, h1, h2, h3, h4, h5, h6, button{
+label, span, p, h1, h2, h3, h4, h5, h6, button, ul, ol, li{
     margin: 0;
+    padding: 0;
 }
 
 label, span, p, h1, h2, h3, h4, h5, h6, button{
