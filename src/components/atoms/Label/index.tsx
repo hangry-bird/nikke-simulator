@@ -16,6 +16,7 @@ const Label = styled.label<LabelProps>`
 
     font-weight: ${({bold}) => bold && "700"};
     color: ${({color}) => color || "#000"};
+    text-align: ${({center}) => center && "center"};
 
     cursor: ${({pointer}) => pointer && "pointer"};
 `;
