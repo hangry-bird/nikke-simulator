@@ -68,11 +68,11 @@ const NikkeSquadPage = () => {
 
             <SkillDescriptionContainer>
 
-                <Toggle
+                {/* <Toggle
                     // defaultChecked={true}
                     icons={false}
                     onChange={() => setIsToggle(prev => !prev)} 
-                />
+                /> */}
 
                 <SkillDescription 
                     nikkes={squadNikkes}
