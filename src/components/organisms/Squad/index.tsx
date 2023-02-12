@@ -5,6 +5,10 @@ import { NikkeInfo } from '@src/NikkeDatas/interfaces';
 // atoms
 import Img from '@components/atoms/Image'
 import Label from '@components/atoms/Label'
+// images
+import FirstBustImage from '@images/bust/1.png'
+import SecondBustImage from '@images/bust/2.png'
+import ThirdBustImage from '@images/bust/3.png'
 
 
 interface SquadProps{
@@ -20,10 +24,18 @@ const Squad = ({ squadNikkes, onClickNikke }: SquadProps) => {
 
                     const nikke: NikkeInfo | Boolean = squadNikkes[index] ?? false
 
+                    // nikke.bustType
+
                     return (
                         <NikkeWrap key={index} pointer={nikke ? true: false} onClick={() => nikke && onClickNikke?.(nikke?.enName)}>
                             <NikkeImageWrap>
                                 <Img src={nikke?.fullBodyImage} width={"100px"} />
+                                {
+                                    nikke?.bustType &&
+                                    <BustImageWrap>
+                                        <Img src={replaceBustTypeImage(nikke?.bustType)} alt="bus Type" />
+                                    </BustImageWrap>
+                                }
                             </NikkeImageWrap>
                             <NikkeLabelWrap>
                                 <Label pointer>{nikke?.krName}</Label>
@@ -38,7 +50,18 @@ const Squad = ({ squadNikkes, onClickNikke }: SquadProps) => {
 export default Squad;
 
 
+const replaceBustTypeImage = (bustType: number) => {
+    switch(bustType){
+        case 1: return FirstBustImage
+        case 2: return SecondBustImage
+        case 3: return ThirdBustImage
+        default: return FirstBustImage
+    }
+}
+
+
 const SquadContainer = styled.div`
+    flex-shrink: 0;
     display: flex;
     justify-content: space-evenly;
     align-items: center;
@@ -62,6 +85,7 @@ const NikkeWrap = styled.div<NikkeWrapProps>`
     cursor: ${({pointer}) => pointer && "pointer"};
 `
 const NikkeImageWrap = styled.div`
+    position: relative;
     display: flex;
     align-items: flex-start;
     justify-content: center;
@@ -75,6 +99,16 @@ const NikkeImageWrap = styled.div`
     background-color: #fff;
 
     overflow: hidden;
+`
+const BustImageWrap = styled.div`
+    position: absolute;
+    top: 0;
+    left: 0;
+
+    width: 20px;
+    height: 20px;
+
+    background-color: #2f353a;
 `
 const NikkeLabelWrap = styled.div`
     height: 20px;
