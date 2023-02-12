@@ -13,7 +13,7 @@ import Img from '@src/components/atoms/Image'
 import Label from '@src/components/atoms/Label'
 import { H2, H3, H4 } from '@src/components/atoms/Header'
 // molecules
-import SkillDescription from '@components/molecules/SkillDescription'
+import SkillDescription from '@src/components/organisms/SkillDescription'
 // organisms
 import Squad from '@src/components/organisms/Squad';
 // stores
