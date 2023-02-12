@@ -21,9 +21,10 @@ interface Skill {
 }
 
 export interface NikkeInfo {
-    company: "elysion" | "tetra" | "missilis"
-    class: "화력형" | "지원형" | "방어형"
-    squad: string,
+    company: "elysion" | "tetra" | "missilis" | "pilgrim";
+    grade: "SSR" | "SR" | "R";
+    class: "화력형" | "지원형" | "방어형";
+    squad: string;
     enName: string;
     krName: string;
     property: "작열" | "수냉" | "철갑" | "풍압" | "전격";

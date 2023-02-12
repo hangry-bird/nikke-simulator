@@ -15,11 +15,25 @@ import EunhwaFullBodyShot from '@images/nikke/fullBody/eunhwa.png'
 import GuillotineFullBodyShot from '@images/nikke/fullBody/guillotine.png'
 import MaidenFullBodyShot from '@images/nikke/fullBody/maiden.png'
 import HelmFullBodyShot from '@images/nikke/fullBody/helm.png'
+import NeonFullBodyShot from '@images/nikke/fullBody/neon.png'
+import DeltaFullBodyShot from '@images/nikke/fullBody/delta.png'
+// missilis
+import MaxwellFullBodyShot from '@images/nikke/fullBody/maxwell.png'
+import YuniFullBodyShot from '@images/nikke/fullBody/yuni.png'
+import LiterFullBodyShot from '@images/nikke/fullBody/liter.png'
+import JuliaFullBodyShot from '@images/nikke/fullBody/julia.png'
+import CentiFullBodyShot from '@images/nikke/fullBody/centi.png'
+import DrakeFullBodyShot from '@images/nikke/fullBody/drake.png'
+import CrowFullBodyShot from '@images/nikke/fullBody/crow.png'
+import PepperFullBodyShot from '@images/nikke/fullBody/pepper.png'
+import AdmiFullBodyShot from '@images/nikke/fullBody/admi.png'
 
 
 
+// elysion
 export const emma: NikkeInfo = {
     company: "elysion",
+    grade: "SSR",
     squad: "앱솔루트",
     class: "지원형",
     enName: "emma",
@@ -74,6 +88,7 @@ export const emma: NikkeInfo = {
 }
 export const privaty: NikkeInfo = {
     company: "elysion",
+    grade: "SSR",
     squad: "트라이앵글",
     class: "화력형",
     enName: "privaty",
@@ -139,6 +154,7 @@ export const privaty: NikkeInfo = {
 }
 export const signal: NikkeInfo = {
     company: "elysion",
+    grade: "SSR",
     squad: "스카우팅",
     class: "화력형",
     enName: "signal",
@@ -199,6 +215,7 @@ export const signal: NikkeInfo = {
 }
 export const poli: NikkeInfo = {
     company: "elysion",
+    grade: "SSR",
     squad: "A.C.P.U",
     class: "방어형",
     enName: "poli",
@@ -259,6 +276,7 @@ export const poli: NikkeInfo = {
 }
 export const miranda: NikkeInfo = {
     company: "elysion",
+    grade: "SSR",
     squad: "A.C.P.U",
     class: "지원형",
     enName: "miranda",
@@ -319,6 +337,7 @@ export const miranda: NikkeInfo = {
 }
 export const brid: NikkeInfo = {
     company: "elysion",
+    grade: "SSR",
     squad: "인피니티 레일",
     class: "화력형",
     enName: "brid",
@@ -378,6 +397,7 @@ export const brid: NikkeInfo = {
 }
 export const soline: NikkeInfo = {
     company: "elysion",
+    grade: "SSR",
     squad: "인피니티 레일",
     class: "화력형",
     enName: "soline",
@@ -439,6 +459,7 @@ export const soline: NikkeInfo = {
 }
 export const diesel: NikkeInfo = {
     company: "elysion",
+    grade: "SSR",
     squad: "인피니티 레일",
     class: "방어형",
     enName: "diesel",
@@ -504,6 +525,7 @@ export const diesel: NikkeInfo = {
 }
 export const vesti: NikkeInfo = {
     company: "elysion",
+    grade: "SSR",
     squad: "앱솔루트",
     class: "화력형",
     enName: "vesti",
@@ -582,6 +604,7 @@ export const vesti: NikkeInfo = {
 }
 export const eunhwa: NikkeInfo = {
     company: "elysion",
+    grade: "SSR",
     squad: "앱솔루트",
     class: "화력형",
     enName: "eunhwa",
@@ -647,6 +670,7 @@ export const eunhwa: NikkeInfo = {
 }
 export const guillotine: NikkeInfo = {
     company: "elysion",
+    grade: "SSR",
     squad: "익스터너",
     class: "화력형",
     enName: "guillotine",
@@ -716,6 +740,7 @@ export const guillotine: NikkeInfo = {
 }
 export const maiden: NikkeInfo = {
     company: "elysion",
+    grade: "SSR",
     squad: "익스터너",
     class: "화력형",
     enName: "maiden",
@@ -778,6 +803,7 @@ export const maiden: NikkeInfo = {
 }
 export const helm: NikkeInfo = {
     company: "elysion",
+    grade: "SSR",
     squad: "이지스",
     class: "화력형",
     enName: "helm",
@@ -844,6 +870,7 @@ export const helm: NikkeInfo = {
 }
 export const rapi: NikkeInfo = {
     company: "elysion",
+    grade: "SR",
     squad: "카운터스",
     class: "화력형",
     enName: "rapi",
@@ -905,6 +932,709 @@ export const rapi: NikkeInfo = {
         }
     ]
 }
+export const neon: NikkeInfo = {
+    company: "elysion",
+    grade: "SR",
+    squad: "카운터스",
+    class: "지원형",
+    enName: "neon",
+    krName: "네온",
+    bustType: 1,
+    fullBodyImage: NeonFullBodyShot,
+    property: "작열",
+    attack: {
+        gun_type: "샷건",
+        max_shots: 9,
+        reload_time: 1.82,
+        operation_type: "일반형",
+        activation_condition: "대상에게",
+        description: ["[공격력 224.5% 대미지]"]
+    },
+    skills:[
+        {
+            order_type: "one",
+            type: "패시브",
+            name: "네온 특제탄",
+            detail: [
+                {
+                    activation_condition: "적 처치 시 공격력이 가장 높은 아군 2기에게",
+                    description: ["[크리티컬 확률 3.56% ▲] [5초 유지]"]
+                }
+            ]
+        },
+        {
+            order_type: "two",
+            type: "패시브",
+            name: "화력 만세!",
+            detail: [
+                {
+                    activation_condition: "풀 버스트 타임 시작 시 아군 전체에게",
+                    description: ["[크리티컬 확률 45.93% ▲] [2발 유지]"]
+                }
+            ]
+        },
+        {
+            order_type: "bust",
+            type: "액티브",
+            name: "오직 화력!",
+            cooldown_time: 20,
+            detail: [
+                {
+                    activation_condition: "방어력이 가장 높은 적 1기에게",
+                    description: ["[공격력 528.97% 대미지]"]
+                },
+                {
+                    activation_condition: "샷건 소지 아군 전체에게",
+                    description: ["[최대 장탄수 3발 ▲] [10초 유지]"]
+                }
+            ]
+        }
+    ]
+}
+export const delta: NikkeInfo = {
+    company: "elysion",
+    grade: "SR",
+    squad: "스카우팅",
+    class: "방어형",
+    enName: "delta",
+    krName: "델타",
+    bustType: 2,
+    property: "풍압",
+    fullBodyImage: DeltaFullBodyShot,
+    attack: {
+        gun_type: "저격소총",
+        max_shots: 6,
+        reload_time: 2.33,
+        operation_type: "차지형",
+        activation_condition: "대상에게",
+        description: [
+            "[공격력 65.95% 대미지]",
+            "차지 시간: 1초",
+            "풀 차지 대미지: 250% 대미지"
+        ]
+    },
+    skills:[
+        {
+            order_type: "one",
+            type: "패시브",
+            name: "리콜렉션",
+            detail: [
+                {
+                    activation_condition: "풀 차지 공격 명중 시 자신에게",
+                    description: ["[최대 체력 8.82% ▲] [10초 유지]"]
+                }
+            ]
+        },
+        {
+            order_type: "two",
+            type: "패시브",
+            name: "라스트 메모리",
+            detail: [
+                {
+                    activation_condition: "버스트 스킬 사용 시 자신에게",
+                    description: ["[방어력 51.42% ▲] [20초 유지]"]
+                }
+            ]
+        },
+        {
+            order_type: "bust",
+            type: "액티브",
+            name: "리멤버 미",
+            cooldown_time: 40,
+            detail: [
+                {
+                    activation_condition: "자신에게",
+                    description: [
+                        "[디코이: 시전자 최대 체력 비례 91.68% 분신] [10초 유지]",
+                        "[주목: 적 전체 도발] [10초 유지]"
+                    ]
+                }
+            ]
+        }
+    ]
+}
+// missilis
+export const maxwell: NikkeInfo = {
+    company: "missilis",
+    grade: "SSR",
+    squad: "메티스",
+    class: "화력형",
+    enName: "maxwell",
+    krName: "맥스웰",
+    bustType: 3,
+    property: "철갑",
+    fullBodyImage: MaxwellFullBodyShot,
+    attack: {
+        gun_type: "저격소총",
+        max_shots: 6,
+        reload_time: 2.00,
+        operation_type: "차지형",
+        activation_condition: "대상에게",
+        description: [
+            "[공격력 69.04% 대미지]",
+            "차지 시간: 1초",
+            "풀 차지 대미지: 250% 대미지"
+        ]
+    },
+    skills:[
+        {
+            order_type: "one",
+            type: "패시브",
+            name: "스트레이트 샷",
+            detail: [
+                {
+                    activation_condition: "풀 버스트 타임 시작 시 공격력이 가장 높은 아군 2기에게",
+                    description: [
+                        "[차지 속도 4.48%▲] [10초 유지]",
+                        "[공격력 43.1%▲] [10초 유지]"
+                    ]
+                }
+            ]
+        },
+        {
+            order_type: "two",
+            type: "패시브",
+            name: "일렉트릭 샷",
+            detail: [
+                {
+                    activation_condition: "니케를 제외한 적이 5기 이상일 때 한하여 자신에게",
+                    description: ["[크리티컬 확률 4.83% ▲] [지속]"]
+                }
+            ]
+        },
+        {
+            order_type: "bust",
+            type: "액티브",
+            name: "피어스 샷",
+            cooldown_time: 40,
+            detail: [
+                {
+                    activation_condition: "자신에게",
+                    description: [
+                        "[사용 무기 변경]:",
+                        "대미지: 공격력 813.42%",
+                        "최대 장탄 수: 1발",
+                        "추가 효과: 관통 특화"
+                    ]
+                }
+            ]
+        }
+    ]
+}
+export const yuni: NikkeInfo = {
+    company: "missilis",
+    grade: "SSR",
+    squad: "워드리스",
+    class: "방어형",
+    enName: "yuni",
+    krName: "유니",
+    bustType: 2,
+    property: "작열",
+    fullBodyImage: YuniFullBodyShot,
+    attack: {
+        gun_type: "런처",
+        max_shots: 6,
+        reload_time: 2.00,
+        operation_type: "차지형",
+        activation_condition: "대상에게",
+        description: [
+            "[공격력 61.3% 대미지]",
+            "차지 시간: 1초",
+            "풀 차지 대미지: 350% 대미지"
+        ]
+    },
+    skills:[
+        {
+            order_type: "one",
+            type: "패시브",
+            name: "DMNS",
+            detail: [
+                {
+                    activation_condition: "풀 버스트 타임 시작 시 아군 전체에게",
+                    description: ["[차지 속도 8.97% ▲] [10초 유지]"]
+                }
+            ]
+        },
+        {
+            order_type: "two",
+            type: "패시브",
+            name: "SDS",
+            detail: [
+                {
+                    activation_condition: "풀 차지 공격 시 아군 전체에게",
+                    description: [
+                        "[방어력 2.77% ▲] [10초 유지]",
+                        "[공격 대미지 비례 2.77% 회복] [10초 유지]",
+                        "[최대 장탄 수 1발 ▲] [5초 유지]"
+                    ]
+                }
+            ]
+        },
+        {
+            order_type: "bust",
+            type: "액티브",
+            name: "BDG",
+            cooldown_time: 20,
+            detail: [
+                {
+                    activation_condition: "공격 범위 내 적들에게",
+                    description: [
+                        "[공격력 348.73% 대미지]",
+                        "[이동 불가] [5초 유지]"
+                    ]
+                }
+            ]
+        }
+    ]
+}
+export const liter: NikkeInfo = {
+    company: "missilis",
+    grade: "SSR",
+    squad: "마이티 툴즈",
+    class: "지원형",
+    enName: "liter",
+    krName: "리타",
+    bustType: 1,
+    property: "철갑",
+    fullBodyImage: LiterFullBodyShot,
+    attack: {
+        gun_type: "기관단총",
+        max_shots: 120,
+        reload_time: 1.50,
+        operation_type: "일반형",
+        activation_condition: "대상에게",
+        description: ["[공격력 8.73% 대미지]"]
+    },
+    skills:[
+        {
+            order_type: "one",
+            type: "패시브",
+            name: "리타 부스트",
+            detail: [
+                {
+                    activation_condition: "풀 버스트 타임 시작 시 아군 전체에게",
+                    description: [
+                        "[시작 횟수 별 효과] [하위 효과 중복 적용]:",
+                        "1회: [버스트 스킬 재사용 시간 2.34초 ▼]",
+                        "2회: [버스트 스킬 재사용 시간 2.7초 ▼]",
+                        "3회: [버스트 스킬 재사용 시간 3.17초 ▼]",
+                    ]
+                },
+                {
+                    activation_condition: "버스트 스킬 사용 시 아군 전체에게",
+                    description: [
+                        "[사용 횟수 별 효과] [하위 효과 중복 적용]:",
+                        "1회: [최대 장탄 수 45.17% ▲] [5초 유지]",
+                        "2회: [크리티컬 대미지 12.46% ▲] [5초 유지]",
+                        "3회: [공격력 14.42% ▲] [5초 유지]",
+                    ]
+                }
+            ]
+        },
+        {
+            order_type: "two",
+            type: "액티브",
+            name: "볼트 부스트",
+            cooldown_time: 15,
+            detail: [
+                {
+                    activation_condition: "현재 체력이 가장 낮은 아군 2기에게",
+                    description: ["[엄폐물 체력 52.5% 회복]"]
+                }
+            ]
+        },
+        {
+            order_type: "bust",
+            type: "액티브",
+            name: "더블 부스트",
+            cooldown_time: 20,
+            detail: [
+                {
+                    activation_condition: "아군 전체에게",
+                    description: ["[공격력 66% ▲] [5초 유지]"]
+                }
+            ]
+        }
+    ]
+}
+export const julia: NikkeInfo = {
+    company: "missilis",
+    grade: "SSR",
+    squad: "마스터 핸드",
+    class: "화력형",
+    enName: "julia",
+    krName: "율리아",
+    bustType: 3,
+    property: "철갑",
+    fullBodyImage: JuliaFullBodyShot,
+    attack: {
+        gun_type: "소총",
+        max_shots: 60,
+        reload_time: 1.20,
+        operation_type: "일반형",
+        activation_condition: "대상에게",
+        description: ["[공격력 14.07% 대미지]"]
+    },
+    skills:[
+        {
+            order_type: "one",
+            type: "패시브",
+            name: "데크레센도",
+            detail: [
+                {
+                    activation_condition: "풀 버스트 타임 시작 시 아군 전체에게",
+                    description: ["[크리티컬 확률 26.04% ▲] [10초 유지]"]
+                }
+            ]
+        },
+        {
+            order_type: "two",
+            type: "패시브",
+            name: "크레센도",
+            detail: [
+                {
+                    activation_condition: "마지막 탄환 명중 시 자신에게",
+                    description: ["[크레센도: 크리티컬 대미지 24.79% ▲] [5중첩] [15초 유지]"]
+                }
+            ]
+        },
+        {
+            order_type: "bust",
+            type: "액티브",
+            name: "클라이맥스",
+            cooldown_time: 40,
+            detail: [
+                {
+                    activation_condition: "방어력이 가장 높은 적 5기에게",
+                    description: ["[공격력 544.5% 대미지]"]
+                },
+                {
+                    activation_condition: "자신이 크레센도 최대 중첩 상태라면 동일 적 대상에게",
+                    description: ["[공격력 544.5% 추가 대미지]"]
+                }
+            ]
+        }
+    ]
+}
+export const centi: NikkeInfo = {
+    company: "missilis",
+    grade: "SSR",
+    squad: "마이티 툴즈",
+    class: "방어형",
+    enName: "centi",
+    krName: "센티",
+    bustType: 2,
+    property: "철갑",
+    fullBodyImage: CentiFullBodyShot,
+    attack: {
+        gun_type: "런처",
+        max_shots: 6,
+        reload_time: 1.52,
+        operation_type: "차지형",
+        activation_condition: "대상에게",
+        description: [
+            "[공격력 61.3% 대미지]",
+            "차지 시간: 1초",
+            "풀 차지 대미지: 250% 대미지"
+        ]
+    },
+    skills:[
+        {
+            order_type: "one",
+            type: "패시브",
+            name: "보수공사",
+            detail: [
+                {
+                    activation_condition: "풀 차지 공격 명중 시 자신에게",
+                    description: ["[스킬 2 재사용 시간 9.16% ▼]"]
+                }
+            ]
+        },
+        {
+            order_type: "two",
+            type: "액티브",
+            cooldown_time: 9,
+            name: "현장검토",
+            detail: [
+                {
+                    activation_condition: "아군 전체에게",
+                    description: ["[시전자 최대 체력 비례 6.38% 보호막] [5초 유지]"]
+                }
+            ]
+        },
+        {
+            order_type: "bust",
+            type: "액티브",
+            name: "착공시작",
+            cooldown_time: 20,
+            detail: [
+                {
+                    activation_condition: "체력이 가장 낮은 적 5기에게",
+                    description: [
+                        "[공격력 145.46% 대미지]",
+                        "[방어력 14.54%▼] [10초 유지]"
+                    ]
+                }
+            ]
+        }
+    ]
+}
+export const drake: NikkeInfo = {
+    company: "missilis",
+    grade: "SSR",
+    squad: "메티스",
+    class: "화력형",
+    enName: "drake",
+    krName: "드레이크",
+    bustType: 3,
+    property: "작열",
+    fullBodyImage: DrakeFullBodyShot,
+    attack: {
+        gun_type: "샷건",
+        max_shots: 9,
+        reload_time: 1.52,
+        operation_type: "일반형",
+        activation_condition: "대상에게",
+        description: ["[공격력 214.3% 대미지]"]
+    },
+    skills:[
+        {
+            order_type: "one",
+            type: "패시브",
+            name: "오버 차지",
+            detail: [
+                {
+                    activation_condition: "풀 버스트 타임 시작 시 아군 전체에게",
+                    description: [
+                        "[명중률 11.85%▲] [10초 유지]",
+                        "[공격력 11.85%▲] [10초 유지]"
+                    ]
+                }
+            ]
+        },
+        {
+            order_type: "two",
+            type: "패시브",
+            name: "썬더볼트",
+            detail: [
+                {
+                    activation_condition: "10회 명중 시 체력이 가장 낮은 적 3기에게",
+                    description: ["[공격력 98.55% 대미지]"]
+                }
+            ]
+        },
+        {
+            order_type: "bust",
+            type: "액티브",
+            name: "드레이크 스페셜",
+            cooldown_time: 40,
+            detail: [
+                {
+                    activation_condition: "공격범위 내 적들에게",
+                    description: ["[공격력 1254% 대미지]"]
+                },
+                {
+                    activation_condition: "자신에게",
+                    description: ["[최대 장탄 수 72.18%▲] [10초 유지]"]
+                }
+            ]
+        }
+    ]
+}
+export const crow: NikkeInfo = {
+    company: "missilis",
+    grade: "SSR",
+    squad: "이그조틱",
+    class: "방어형",
+    enName: "crow",
+    krName: "크로우",
+    bustType: 3,
+    property: "작열",
+    fullBodyImage: CrowFullBodyShot,
+    attack: {
+        gun_type: "기관단총",
+        max_shots: 120,
+        reload_time: 1.67,
+        operation_type: "일반형",
+        activation_condition: "대상에게",
+        description: ["[공격력 4.47% 대미지]"]
+    },
+    skills:[
+        {
+            order_type: "one",
+            type: "패시브",
+            name: "킬링타임",
+            detail: [
+                {
+                    activation_condition: "풀 버스트 타임 시작 시 적 전체에게",
+                    description: ["[공격력 19.93% ▼] [10초 유지]"]
+                }
+            ]
+        },
+        {
+            order_type: "two",
+            type: "패시브",
+            name: "데어데블",
+            detail: [
+                {
+                    activation_condition: "마지막 탄환 명중 시 대상에게",
+                    description: ["[공격력 89.09% 추가 대미지]"]
+                },
+                {
+                    activation_condition: "마지막 탄환 명중 시 자신에게",
+                    description: ["[방어력 12.72% ▲] [5초 유지]"]
+                }
+            ]
+        },
+        {
+            order_type: "bust",
+            type: "액티브",
+            name: "더 테러리스트",
+            cooldown_time: 40,
+            detail: [
+                {
+                    activation_condition: "공격력이 가장 높은 적 1기에게",
+                    description: ["[공격력 915.75% 대미지]"]
+                }
+            ]
+        }
+    ]
+}
+export const pepper: NikkeInfo = {
+    company: "missilis",
+    grade: "SSR",
+    squad: "세라핌",
+    class: "지원형",
+    enName: "pepper",
+    krName: "페퍼",
+    bustType: 1,
+    property: "풍압",
+    fullBodyImage: PepperFullBodyShot,
+    attack: {
+        gun_type: "샷건",
+        max_shots: 9,
+        reload_time: 2.03,
+        operation_type: "일반형",
+        activation_condition: "대상에게",
+        description: ["[공격력 231.6% 대미지]"]
+    },
+    skills:[
+        {
+            order_type: "one",
+            type: "패시브",
+            name: "리프레쉬 하트",
+            detail: [
+                {
+                    activation_condition: "마지막 탄환 명중 시 체력이 가장 낮은 아군 1기에게",
+                    description: ["[시전자 최대 체력 비례 4.45% 회복]"]
+                },
+                {
+                    activation_condition: "마지막 탄환 명중 시 아군 전체에게",
+                    description: ["[리프레쉬 하트: 체력 회복량 6.53% ▲] [5 중첩] [15초 유지]"]
+                }
+            ]
+        },
+        {
+            order_type: "two",
+            type: "액티브",
+            name: "비타민 파워",
+            cooldown_time: 10,
+            detail: [
+                {
+                    activation_condition: "공격력이 가장 높은 적 1기에게",
+                    description: [
+                        "[공격력 160% 대미지]",
+                        "[공격력 3.55% ▼] [5초 유지]"
+                    ]
+                }
+            ]
+        },
+        {
+            order_type: "bust",
+            type: "액티브",
+            name: "페퍼 테라피",
+            cooldown_time: 20,
+            detail: [
+                {
+                    activation_condition: "공격력이 가장 높은 적 1기에게",
+                    description: ["[공격력 1237.5% 대미지]"]
+                },
+                {
+                    activation_condition: "아군 전체에게",
+                    description: ["[중첩 가능 이로운 효과 중첩량 1개 ▲]"]
+                },
+                {
+                    activation_condition: "자신이 리프레쉬 하트 최대 중첩 상태라면 아군 전체에게",
+                    description: ["[시전자 최대 체력 비례 27.22% 회복]"]
+                }
+            ]
+        }
+    ]
+}
+export const admi: NikkeInfo = {
+    company: "missilis",
+    grade: "SSR",
+    squad: "트라이앵글",
+    class: "지원형",
+    enName: "admi",
+    krName: "애드미",
+    bustType: 1,
+    property: "풍압",
+    fullBodyImage: AdmiFullBodyShot,
+    attack: {
+        gun_type: "저격소총",
+        max_shots: 6,
+        reload_time: 1.73,
+        operation_type: "차지형",
+        activation_condition: "대상에게",
+        description: [
+            "[공격력 67.37% 대미지]",
+            "차지 시간: 1초",
+            "풀 차지 대미지: 250% 대미지"
+        ]
+    },
+    skills:[
+        {
+            order_type: "one",
+            type: "패시브",
+            name: "응원의 손길",
+            detail: [
+                {
+                    activation_condition: "20회 피격 시 아군 전체에게",
+                    description: ["[차지 대미지 9.59% ▲] [20초 유지]"]
+                }
+            ]
+        },
+        {
+            order_type: "two",
+            type: "액티브",
+            name: "고양이 숨결",
+            cooldown_time: 20,
+            detail: [
+                {
+                    activation_condition: "공격력이 가장 높은 아군 2기에게",
+                    description: ["[피격 대미지 28.65% ▼] [10초 유지]"]
+                }
+            ]
+        },
+        {
+            order_type: "bust",
+            type: "액티브",
+            name: "애정의 보은",
+            cooldown_time: 20,
+            detail: [
+                {
+                    activation_condition: "아군 전체에게",
+                    description: [
+                        "[재장전 속도 50.91% ▲] [10초 유지]",
+                        "[크리티컬 대미지 28.34% ▲] [10초 유지]"
+                    ]
+                }
+            ]
+        }
+    ]
+}
+
 
 export const nikkesObject: { 
     [index: string]: NikkeInfo,
@@ -927,6 +1657,7 @@ export const nikkesObject: {
 
 const nikkesArray: NikkeInfo[] =
     [
+        // elysion
         emma,
         privaty,
         signal,
@@ -941,5 +1672,25 @@ const nikkesArray: NikkeInfo[] =
         maiden, 
         helm,
         rapi,
+        neon,
+        delta,
     ]
 export default nikkesArray;
+
+
+
+export const drawingLightWeightArray = nikkesArray.map(nikke => ({
+        company: nikke.company,
+        grade: nikke.grade,
+        krName: nikke.krName,
+        fullBodyImage: nikke.fullBodyImage,
+}))
+
+export const elysionNikkes = drawingLightWeightArray.filter(nikke => nikke.company === "elysion");
+export const tetraNikkes = drawingLightWeightArray.filter(nikke => nikke.company === "tetra");
+export const missilisNikkes = drawingLightWeightArray.filter(nikke => nikke.company === "missilis");
+export const pilgrimNikkes = drawingLightWeightArray.filter(nikke => nikke.company === "pilgrim");
+
+export const ssrNikkes = drawingLightWeightArray.filter(nikke => nikke.grade === "SSR");
+export const srNikkes = drawingLightWeightArray.filter(nikke => nikke.grade === "SR");
+export const rNikkes = drawingLightWeightArray.filter(nikke => nikke.grade === "R");
