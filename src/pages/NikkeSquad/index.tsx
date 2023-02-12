@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from 'react'
 import styled from 'styled-components'
-import Toggle from 'react-toggle'
+// import Toggle from 'react-toggle'
 
-import "react-toggle/style.css"
+// import "react-toggle/style.css"
 
 import nikkeList from '@src/NikkeDatas/index';
 import { NikkeInfo } from '@src/NikkeDatas/interfaces';
@@ -157,7 +157,8 @@ const NikkeListContainer = styled.div`
     flex-wrap: wrap;
 
     width: auto;
-    height: auto;
+    /* height: auto; */
+    height: 100%;
 
     background-color: #F5F5F5;
 
