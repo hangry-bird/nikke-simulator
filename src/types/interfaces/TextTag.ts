@@ -12,5 +12,7 @@ export interface TextTag {
 
     color?: string;
 
+    center?: boolean;
+
     pointer?: boolean;
 }
