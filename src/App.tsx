@@ -1,8 +1,8 @@
 import styled from 'styled-components'
 import Router from './Router';
 
-function App() {
 
+const App = () => {
   return (
     <AppContainer>
       <Router />
@@ -15,6 +15,5 @@ export default App;
 const AppContainer = styled.div`
   width: 100%;
   height: 100%;
-
-  background-color: black;
 `
+
