@@ -27,6 +27,12 @@ import DrakeFullBodyShot from '@images/nikke/fullBody/drake.png'
 import CrowFullBodyShot from '@images/nikke/fullBody/crow.png'
 import PepperFullBodyShot from '@images/nikke/fullBody/pepper.png'
 import AdmiFullBodyShot from '@images/nikke/fullBody/admi.png'
+import EpinelFullBodyShot from '@images/nikke/fullBody/epinel.png'
+import LaplaceFullBodyShot from '@images/nikke/fullBody/laplace.png'
+import AnneMiracleFairyFullBodyShot from '@images/nikke/fullBody/anne_miracleFairy.png'
+import JackalFullBodyShot from '@images/nikke/fullBody/jackal.png'
+import GuiltyFullBodyShot from '@images/nikke/fullBody/guilty.png'
+import SinFullBodyShot from '@images/nikke/fullBody/sin.png'
 
 
 
@@ -1634,6 +1640,420 @@ export const admi: NikkeInfo = {
         }
     ]
 }
+export const epinel: NikkeInfo = {
+    company: "missilis",
+    grade: "SSR",
+    squad: "라이프 토닉",
+    class: "화력형",
+    enName: "epinel",
+    krName: "에피넬",
+    bustType: 3,
+    property: "풍압",
+    fullBodyImage: EpinelFullBodyShot,
+    attack: {
+        gun_type: "기관단총",
+        max_shots: 120,
+        reload_time: 1,
+        operation_type: "일반형",
+        activation_condition: "대상에게",
+        description: ["[공격력 8.1% 대미지]"]
+    },
+    skills:[
+        {
+            order_type: "one",
+            type: "패시브",
+            name: "슈퍼 루키",
+            detail: [
+                {
+                    activation_condition: "적 처치 시 자신에게",
+                    description: ["[슈퍼 루키: 공격력 13.86% ▲] [15초 유지]"]
+                }
+            ]
+        },
+        {
+            order_type: "two",
+            type: "패시브",
+            name: "스파이더",
+             detail: [
+                {
+                    activation_condition: "마지막 탄환 명중 시 자신에게",
+                    description: [
+                        "[크리티컬 확률 5.05% ▲] [5초 유지]",
+                        "[크리티컬 대미지 6.4% ▲] [5초 유지]"
+                    ]
+                }
+            ]
+        },
+        {
+            order_type: "bust",
+            type: "액티브",
+            name: "SAFE 50-50",
+            cooldown_time: 40,
+            detail: [
+                {
+                    activation_condition: "적 전체에게",
+                    description: ["[공격력 457.87% 대미지]"]
+                },
+                {
+                    activation_condition: "자신이 슈퍼 루키 최대 중첩 상태라면 동일 적 대상에게",
+                    description: ["[공격력 457.87% 추가 대미지]"]
+                }
+            ]
+        }
+    ]
+}
+export const laplace: NikkeInfo = {
+    company: "missilis",
+    grade: "SSR",
+    squad: "메티스",
+    class: "화력형",
+    enName: "laplace",
+    krName: "라플라스",
+    bustType: 3,
+    property: "철갑",
+    fullBodyImage: LaplaceFullBodyShot,
+    attack: {
+        gun_type: "런처",
+        max_shots: 6,
+        reload_time: 2.33,
+        operation_type: "차지형",
+        activation_condition: "대상에게",
+        description: [
+            "[공격력 63.11% 대미지]",
+            "차지 시간: 1초",
+            "풀 차지 대미지: 250% 대미지"
+        ]
+    },
+    skills:[
+        {
+            order_type: "one",
+            type: "패시브",
+            name: "히어로 비전",
+            detail: [
+                {
+                    activation_condition: "풀 차지 공격 시 자신에게",
+                    description: ["[히어로 비전 : 폭발 범위 3.57% ▲] [5중첩] [5초 유지]"]
+                }
+            ]
+        },
+        {
+            order_type: "two",
+            type: "패시브",
+            name: "히어로 봄버",
+             detail: [
+                {
+                    activation_condition: "마지막 탄환 명중 시 대상에게",
+                    description: ["[공격력 81.66% 추가 대미지]"]
+                },
+                {
+                    activation_condition: "보스 파츠 명중 시 대상에게",
+                    description: ["[공격력 14.78% 추가 대미지]"]
+                }
+            ]
+        },
+        {
+            order_type: "bust",
+            type: "액티브",
+            name: "라플라스 버스터",
+            cooldown_time: 40,
+            detail: [
+                {
+                    activation_condition: "자신에게",
+                    description: [
+                        "[사용 무기 변경]:",
+                        "최초 대미지 : 공격력 897.6% 대미지",
+                        "지속 대미지 : 공격력 14.52% 대미지",
+                        "유지 시간 : 5초",
+                        "추가 효과 : 관통 특화",
+                    ]
+                },
+                {
+                    activation_condition: "자신이 히어로 비전 최대 중첩 상태라면 동일 적 대상에게",
+                    description: ["[공격력 11.9% 방어력 무시 대미지]"]
+                }
+            ]
+        }
+    ]
+}
+export const anne_miracleFairy: NikkeInfo = {
+    company: "missilis",
+    grade: "SSR",
+    squad: "리콜 & 릴리즈",
+    class: "지원형",
+    enName: "anne_miracleFairy",
+    krName: "앤:미라클 페어리",
+    bustType: 2,
+    property: "수냉",
+    fullBodyImage: AnneMiracleFairyFullBodyShot,
+    attack: {
+        gun_type: "런처",
+        max_shots: 6,
+        reload_time: 2,
+        operation_type: "차지형",
+        activation_condition: "대상에게",
+        description: [
+            "[공격력 61.3% 대미지]",
+            "차지 시간: 1초",
+            "풀 차지 대미지: 250% 대미지"
+        ]
+    },
+    skills:[
+        {
+            order_type: "one",
+            type: "패시브",
+            name: "춤추는 요정",
+            detail: [
+                {
+                    activation_condition: "일반 공격 3회 공격 시 지원형 아군 전체에게",
+                    description: ["[공격 대미지 비례 6.07% 회복] [5초 유지]"]
+                }
+            ]
+        },
+        {
+            order_type: "two",
+            type: "패시브",
+            name: "요정의 장난",
+             detail: [
+                {
+                    activation_condition: "자신의 체력이 90% 이상일 때 한하여 아군 전체에게",
+                    description: ["[체력 회복량 23.46% ▲] [지속]"]
+                },
+                {
+                    activation_condition: "마지막 탄환 명중 시 자신의 체력이 90% 이상이라면 적 전체에게",
+                    description: ["[체력 회복량 78.93% ▼] [10초 유지]"]
+                }
+            ]
+        },
+        {
+            order_type: "bust",
+            type: "액티브",
+            name: "파란 나비의 꿈",
+            cooldown_time: 60,
+            detail: [
+                {
+                    activation_condition: "화력형 아군 전체에게",
+                    description: [
+                        "[시전자 최대 체력 비례 38.61% 회복]",
+                        "[공격력 77.22% ▲] [10초 유지]"
+                    ]
+                },
+                {
+                    activation_condition: "사망한 화력형 아군 무작위 1기에게",
+                    description: ["[체력 99%로 부활] [전투 중 1회 발동]"]
+                }
+            ]
+        }
+    ]
+}
+export const jackal: NikkeInfo = {
+    company: "missilis",
+    grade: "SSR",
+    squad: "이그조틱",
+    class: "방어형",
+    enName: "jackal",
+    krName: "자칼",
+    bustType: 1,
+    property: "철갑",
+    fullBodyImage: JackalFullBodyShot,
+    attack: {
+        gun_type: "런처",
+        max_shots: 6,
+        reload_time: 2,
+        operation_type: "차지형",
+        activation_condition: "대상에게",
+        description: [
+            "[공격력 65.02% 대미지]",
+            "차지 시간: 1초",
+            "풀 차지 대미지: 250% 대미지"
+        ]
+    },
+    skills:[
+        {
+            order_type: "one",
+            type: "패시브",
+            name: "해피 자칼",
+            detail: [
+                {
+                    activation_condition: "10회 피격 시 최대 체력이 가장 높은 적 1기에게",
+                    description: [
+                        "[받는 데미지 9.09% ▲] [10초 유지]",
+                        "[공격력 9.09% ▼] [10초 유지]"
+                    ]
+                }
+            ]
+        },
+        {
+            order_type: "two",
+            type: "패시브",
+            name: "치얼업 자칼",
+             detail: [
+                {
+                    activation_condition: "전투 시작 시 자신과 자신을 제외한 공격력이 가장 높은 아군 2기에게",
+                    description: [
+                        "[피격 대미지 분배] [120초 유지]",
+                        "[방어력 8.27% ▲] [120초 유지]"
+                    ]
+                }
+            ]
+        },
+        {
+            order_type: "bust",
+            type: "액티브",
+            name: "크레이지 자칼",
+            cooldown_time: 20,
+            detail: [
+                {
+                    activation_condition: "아군 전체에게",
+                    description: [
+                        "[대상 설명이 '~ 적 1기에게'로 끝나는 버스트 스킬 공격 대미지 38.91% ▲] [15초 유지] (추가 대미지 제외)",
+                        "[방어력 14.69% ▲] [10초 유지]"
+                    ]
+                },
+                {
+                    activation_condition: "사망한 화력형 아군 무작위 1기에게",
+                    description: ["[체력 99%로 부활] [전투 중 1회 발동]"]
+                }
+            ]
+        }
+    ]
+}
+export const guilty: NikkeInfo = {
+    company: "missilis",
+    grade: "SSR",
+    squad: "리얼 카인드니스",
+    class: "화력형",
+    enName: "guilty",
+    krName: "길티",
+    bustType: 2,
+    property: "풍압",
+    fullBodyImage: GuiltyFullBodyShot,
+    attack: {
+        gun_type: "샷건",
+        max_shots: 9,
+        reload_time: 2.67,
+        operation_type: "일반형",
+        activation_condition: "대상에게",
+        description: ["[공격력 231.4% 대미지]"]
+    },
+    skills:[
+        {
+            order_type: "one",
+            type: "패시브",
+            name: "빌려 갈게에···.",
+            detail: [
+                {
+                    activation_condition: "일반 공격 6회 적중시 자신에게",
+                    description: ["[빌려갈게···. : 공격력이 가장 높은 아군 1기의 공격력 8.81% 복제][5중첩][10초 유지]"]
+                }
+            ]
+        },
+        {
+            order_type: "two",
+            type: "패시브",
+            name: "같이 놀자···.",
+             detail: [
+                {
+                    activation_condition: "일반 공격 12회 명중시 풍압코드 아군 전체에게",
+                    description: [
+                        "[중첩가능 이로운 효과 중첩량 1개 ▲]",
+                        "[공격력 4.13% ▲] [10초 유지]"
+                    ]
+                }
+            ]
+        },
+        {
+            order_type: "bust",
+            type: "액티브",
+            name: "잡았다아···.",
+            cooldown_time: 20,
+            detail: [
+                {
+                    activation_condition: "방어력이 가장 높은 적 1기에게",
+                    description: ["[공격력 284.32% 대미지]"]
+                },
+                {
+                    activation_condition: "자신이 빌려 갈게에.... 최대 충첩 상태라면 동일 적 대상에게",
+                    description: [
+                        "[방어력 20.25%▼][5초 유지]",
+                        "[공격력277.71% 추가 대미지]"
+                    ]
+                }
+            ]
+        }
+    ]
+}
+export const sin: NikkeInfo = {
+    company: "missilis",
+    grade: "SSR",
+    squad: "리얼 카인드니스",
+    class: "방어형",
+    enName: "sin",
+    krName: "신",
+    bustType: 2,
+    property: "전격",
+    fullBodyImage: SinFullBodyShot,
+    attack: {
+        gun_type: "소총",
+        max_shots: 60,
+        reload_time: 1,
+        operation_type: "일반형",
+        activation_condition: "대상에게",
+        description: ["[공격력 13.65% 대미지]"]
+    },
+    skills:[
+        {
+            order_type: "one",
+            type: "패시브",
+            name: "센텐스 엔딩스",
+            detail: [
+                {
+                    activation_condition: "마지막 탄환 명중 시 자신에게",
+                    description: [
+                        "[최대 체력이 가장 높은 아군 1기의 최대 체력 15.03% 복제] [5초 유지]",
+                        "[주목:적 전체를 도발][5초 유지]"
+                    ]
+                }
+            ]
+        },
+        {
+            order_type: "two",
+            type: "패시브",
+            name: "허리 온",
+             detail: [
+                {
+                    activation_condition: "풀 버스트 타임 종료 시 자신에게",
+                    description: ["[버스트 게이지 충전 속도 16.17% ▲] [5초 유지]"]
+                },
+                {
+                    activation_condition: "버스트 스킬 사용 시 자신에게",
+                    description: [
+                        "[사용 횟수 별 효과][하위 효과 중복 적용]:",
+                        "1회 : [공격 대미지 비례 15.3% 회복] [5초 유지]",
+                        "2회 : [체력 회복량 51% ▲] [5초 유지]",
+                        "3회 : [방어력 43.2% ▲] [5초 유지]",
+                    ]
+                }
+            ]
+        },
+        {
+            order_type: "bust",
+            type: "액티브",
+            name: "워드 오브 킬",
+            cooldown_time: 20,
+            detail: [
+                {
+                    activation_condition: "니케를 제외한 적이 4기 이상이라면 모든 적에게",
+                    description: ["[받는 대미지 12.23% ▲] [5초 유지]"]
+                },
+                {
+                    activation_condition: "공격 범위 내 적들에게",
+                    description: ["공격력 176.32% 대미지"]
+                }
+            ]
+        }
+    ]
+}
+
 
 
 export const nikkesObject: { 
