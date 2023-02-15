@@ -4430,25 +4430,6 @@ export const idollSun: NikkeInfo = {
 }
 
 
-export const nikkesObject: { 
-    [index: string]: NikkeInfo,
-} = {
-    emma,
-    privaty,
-    signal,
-    poli,
-    miranda,
-    brid,
-    soline,
-    diesel,
-    vesti, 
-    eunhwa, 
-    guillotine, 
-    maiden, 
-    helm,
-    rapi,
-}
-
 const nikkesArray: NikkeInfo[] =
     [
         // elysion
@@ -4500,6 +4481,57 @@ const nikkesArray: NikkeInfo[] =
     ]
 export default nikkesArray;
 
+
+export const nikkesObject: {
+    [index: string]: NikkeInfo,
+} = {
+    // elysion
+    // SSR
+    emma, eunhwa, vesti,
+    privaty, signal,
+    poli, miranda,
+    brid, soline, diesel,
+    guillotine, maiden,
+    helm,
+    // SR
+    rapi, neon, delta,
+    // R
+    soldierEG, soldierOW, soldierFA,
+
+    // misilis
+    // SSR
+    liter, centi,
+    maxwell, drake, laplace,
+    yuni,
+    julia,
+    crow, jackal,
+    pepper, admi,
+    epinel,
+    anne_miracleFairy,
+    guilty, sin, quency,
+    // SR
+    mihara, n102, ether,
+    // R
+    product08, product12, product23,
+
+    // tetra
+    // SSR
+    sugar,
+    exia, novel,
+    alice, ludmila,
+    frima, milk,
+    mary,
+    yulha,
+    rupee, yan, dolla, rupee_winterShopper,
+    folkwang,
+    aria, noise, volume,
+    viper,
+    cocoa, soda,
+    // SR
+    anis, belorta, mica, neve,
+    // R
+    idollFlower, idollOcean, idollSun
+}
 
 
 export const drawingLightWeightArray = nikkesArray.map(nikke => ({
