@@ -60,6 +60,14 @@ const NikkeSquadPage = () => {
         }
     }
 
+    const bustTypeStyled = (bustType: BustFilterType) => {
+        return {
+                border: bustFilter === bustType ? "2px solid #808080" : "",
+                backgroundColor: bustFilter === bustType ? "#FFF" : "",
+                fontWeight: bustFilter === bustType ? "700" : "",
+            }
+        }
+
     return (
         <MainContainer>
 
@@ -72,25 +80,13 @@ const NikkeSquadPage = () => {
                 <NikkeListContainer>
                     <BustFilterWrap>
                         <Label 
-                            style={{
-                                border: bustFilter === 1 ? "2px solid #808080" : "",
-                                backgroundColor: bustFilter === 1 ? "#FFF" : "",
-                                fontWeight: bustFilter === 1 ? "700" : "",
-                            }}
+                            style={bustTypeStyled(1)}
                             onClick={() => handleClickBustTypeFilter(1)}>I</Label>
                         <Label 
-                            style={{
-                                border: bustFilter === 2 ? "2px solid #808080" : "",
-                                backgroundColor: bustFilter === 2 ? "#FFF" : "",
-                                fontWeight: bustFilter === 2 ? "700" : "",
-                            }}
+                            style={bustTypeStyled(2)}
                             onClick={() => handleClickBustTypeFilter(2)}>II</Label>
                         <Label 
-                            style={{
-                                border: bustFilter === 3 ? "2px solid #808080" : "",
-                                backgroundColor: bustFilter === 3 ? "#FFF" : "",
-                                fontWeight: bustFilter === 3 ? "700" : "",
-                            }}
+                            style={bustTypeStyled(3)}
                             onClick={() => handleClickBustTypeFilter(3)}>III</Label>
                     </BustFilterWrap>
 
