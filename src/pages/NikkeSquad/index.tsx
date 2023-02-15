@@ -20,11 +20,15 @@ import Squad from '@src/components/organisms/Squad';
 import useSquad from '@stores/Main'
 
 
+type BustFilterType = 0 | 1 | 2 | 3;
+
 const NikkeSquadPage = () => {
 
-    const [isToggle, setIsToggle] = useState(false)
+    // const [isToggle, setIsToggle] = useState(false)
 
     const { squadNikkes, addNikke, deleteNikke } = useSquad();
+
+    const [bustFilter, setBustFilter] = useState<BustFilterType>(0);
 
     useEffect(() => {
         document.body.style.overflow = "hidden";
@@ -47,6 +51,14 @@ const NikkeSquadPage = () => {
         deleteNikke(hasNikkeIndex)
     }
 
+    const handleClickBustTypeFilter = (bustType: BustFilterType) => {
+        if(bustFilter === bustType){
+            setBustFilter(0)
+        }
+        else{
+            setBustFilter(bustType)
+        }
+    }
 
     return (
         <MainContainer>
@@ -58,9 +70,34 @@ const NikkeSquadPage = () => {
                 />
 
                 <NikkeListContainer>
+                    <BustFilterWrap>
+                        <Label 
+                            style={{
+                                border: bustFilter === 1 ? "2px solid #808080" : "",
+                                backgroundColor: bustFilter === 1 ? "#FFF" : "",
+                                fontWeight: bustFilter === 1 ? "700" : "",
+                            }}
+                            onClick={() => handleClickBustTypeFilter(1)}>I</Label>
+                        <Label 
+                            style={{
+                                border: bustFilter === 2 ? "2px solid #808080" : "",
+                                backgroundColor: bustFilter === 2 ? "#FFF" : "",
+                                fontWeight: bustFilter === 2 ? "700" : "",
+                            }}
+                            onClick={() => handleClickBustTypeFilter(2)}>II</Label>
+                        <Label 
+                            style={{
+                                border: bustFilter === 3 ? "2px solid #808080" : "",
+                                backgroundColor: bustFilter === 3 ? "#FFF" : "",
+                                fontWeight: bustFilter === 3 ? "700" : "",
+                            }}
+                            onClick={() => handleClickBustTypeFilter(3)}>III</Label>
+                    </BustFilterWrap>
+
                     <PopulateNikkes
                         nikkes={nikkeList}
                         squadNikkes={squadNikkes}
+                        bustFilter={bustFilter}
                         onClick={(nikke: NikkeInfo) => handleNikkeClick(nikke)}
                     />
                 </NikkeListContainer>
@@ -86,11 +123,12 @@ export default NikkeSquadPage;
 
 type NikkeProps = {
     nikkes: NikkeInfo[];
-    squadNikkes: NikkeInfo[],
+    squadNikkes: NikkeInfo[];
+    bustFilter: 0 | 1 | 2 | 3;
     onClick: (nikke: NikkeInfo) => void;
 }
 
-const PopulateNikkes: React.FC<NikkeProps> = ({ nikkes, squadNikkes, onClick }) => {
+const PopulateNikkes: React.FC<NikkeProps> = ({ nikkes, squadNikkes, bustFilter, onClick }) => {
 
     // 이름 오름차순 정렬
     nikkes = nikkes.sort((a, b) => {
@@ -104,6 +142,10 @@ const PopulateNikkes: React.FC<NikkeProps> = ({ nikkes, squadNikkes, onClick }) 
             {
                 nikkes.map(nikke => {
                     const hasNikkeIndex = squadNikkes.findIndex(squadNikke => squadNikke.enName === nikke.enName)
+
+                    if(bustFilter !== 0 && nikke.bustType !== bustFilter){
+                        return(<></>)
+                    }
 
                     return (
                         <Portrait
@@ -151,6 +193,28 @@ const SkillDescriptionContainer = styled.div`
     background-color: #fff;
     overflow: auto;
 `
+const BustFilterWrap = styled.div`
+    display: flex;
+    justify-content: flex-end;
+
+    width: 100%;
+    height: auto;
+    /* margin-top: 5px; */
+    padding: 8px;
+
+    background-color: #F5F5F5;
+
+    ${Label}{
+        width: 24px;
+        height: 24px;
+        margin: 0 4px;
+        border: 1px solid #808080;
+        border-radius: 4px;
+        /* background-color: #FFF; */
+        text-align: center;
+        cursor: pointer;
+    }
+`
 const NikkeListContainer = styled.div`
     display: flex;
     justify-content: center;
@@ -164,7 +228,7 @@ const NikkeListContainer = styled.div`
 
     overflow: auto;
 
-    & > div{
+    & > div:not(:first-of-type){
         background-color: #fff;
         margin: 8px 8px;
     }
