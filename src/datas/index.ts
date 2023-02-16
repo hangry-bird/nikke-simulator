@@ -64,6 +64,7 @@ import VolumeFullBodyShot from '@images/nikke/fullBody/volume.png'
 import Rupee_winterShopperFullBodyShot from '@images/nikke/fullBody/rupee_winterShopper.png'
 import ViperFullBodyShot from '@images/nikke/fullBody/viper.png'
 import CocoaFullBodyShot from '@images/nikke/fullBody/cocoa.png'
+import SodaFullBodyShot from '@images/nikke/fullBody/soda.png'
 import AnisFullBodyShot from '@images/nikke/fullBody/anis.png'
 import BelortaFullBodyShot from '@images/nikke/fullBody/belorta.png'
 import MicaFullBodyShot from '@images/nikke/fullBody/mica.png'
@@ -3946,7 +3947,7 @@ export const soda: NikkeInfo = {
     enName: "soda",
     krName: "소다",
     bustType: 1,
-    fullBodyImage: CocoaFullBodyShot,
+    fullBodyImage: SodaFullBodyShot,
     property: "작열",
     attack: {
         gun_type: "머신건",
