@@ -71,6 +71,14 @@ import NeveFullBodyShot from '@images/nikke/fullBody/neve.png'
 import IdollFlowerFullBodyShot from '@images/nikke/fullBody/idoll_flower.png'
 import IdollOceanFullBodyShot from '@images/nikke/fullBody/idoll_ocean.png'
 import IdollSunFullBodyShot from '@images/nikke/fullBody/idoll_sun.png'
+// pilgrim
+import SnowWhiteFullBodyShot from '@images/nikke/fullBody/snowWhite.png'
+import IsabelFullBodyShot from '@images/nikke/fullBody/isabel.png'
+import RapunzelFullBodyShot from '@images/nikke/fullBody/rapunzel.png'
+import ScarletFullBodyShot from '@images/nikke/fullBody/scarlet.png'
+import HarranFullBodyShot from '@images/nikke/fullBody/harran.png'
+import NoahFullBodyShot from '@images/nikke/fullBody/noah.png'
+import ModerniaFullBodyShot from '@images/nikke/fullBody/modernia.png'
 
 
 // elysion
@@ -4428,7 +4436,488 @@ export const idollSun: NikkeInfo = {
         }
     ]
 }
-
+// pilgrim
+export const snowWhite: NikkeInfo = {
+    company: "pilgrim",
+    grade: "SSR",
+    squad: "파이오니아",
+    class: "화력형",
+    enName: "Snow White",
+    krName: "스노우 화이트",
+    bustType: 3,
+    fullBodyImage: SnowWhiteFullBodyShot,
+    property: "철갑",
+    attack: {
+        gun_type: "소총",
+        max_shots: 60,
+        reload_time: 1.5,
+        operation_type: "일반형",
+        activation_condition: "대상에게",
+        description: ["[공격력 14.71% 대미지]"]
+    },
+    skills: [
+        {
+            order_type: "one",
+            type: "패시브",
+            name: "순백의 의지",
+            detail: [
+                {
+                    activation_condition: "일반 공격 30회 명중 시 대상에게",
+                    description: ["[공격력 82.8% 추가 대미지] [10초 유지]"]
+                },
+                {
+                    activation_condition: "일반 공격 30회 명중 시 자신에게",
+                    description: ["[공격력 8.28% ▲] [5초 유지]"]
+                }
+            ]
+        },
+        {
+            order_type: "two",
+            type: "액티브",
+            name: "세븐스 드워프 : V & VI",
+            cooldown_time: 15,
+            detail: [
+                {
+                    activation_condition: "공격 범위 내 적들에게",
+                    description: ["[공격력 144.73% 대미지]"]
+                },
+                {
+                    activation_condition: "풀 버스트 타임 지속 시간 중 발동 시 자신에게",
+                    description: ["[크리티컬 확률 26.1% ▲] [10초 유지]"]
+                }
+            ]
+        },
+        {
+            order_type: "bust",
+            type: "액티브",
+            name: "세븐스 드워프 : I",
+            cooldown_time: 40,
+            detail: [
+                {
+                    activation_condition: "자신에게",
+                    description: [
+                        "[사용 무기 변경]:",
+                        "차지 시간: 5초",
+                        "대미지: 공격력 499.5%",
+                        "풀 차지 대미지: 1000% 대미지",
+                        "최대 장탄 수: 1발",
+                        "추가 효과: 관통 특화"
+                    ]
+                }
+            ]
+        }
+    ],
+}
+export const isabel: NikkeInfo = {
+    company: "pilgrim",
+    grade: "SSR",
+    squad: "인헤르트",
+    class: "화력형",
+    enName: "Isabel",
+    krName: "이사벨",
+    bustType: 3,
+    fullBodyImage: IsabelFullBodyShot,
+    property: "전격",
+    attack: {
+        gun_type: "샷건",
+        max_shots: 9,
+        reload_time: 1.86,
+        operation_type: "일반형",
+        activation_condition: "대상에게",
+        description: ["[공격력 210.7% 대미지]"]
+    },
+    skills: [
+        {
+            order_type: "one",
+            type: "패시브",
+            name: "타겟 마킹",
+            detail: [
+                {
+                    activation_condition: "버스트 스킬 사용 시 자신에게",
+                    description: ["[타겟 마킹 1: 크리티컬 확률 6.26% ▲] [45초 유지]"]
+                }
+            ]
+        },
+        {
+            order_type: "two",
+            type: "액티브",
+            name: "페더 이젝션",
+            cooldown_time: 15,
+            detail: [
+                {
+                    activation_condition: "방어력이 가장 높은 적 5기에게",
+                    description: ["[공격력 170.58% 대미지]"]
+                }
+            ]
+        },
+        {
+            order_type: "bust",
+            type: "액티브",
+            name: "소닉 체이서",
+            cooldown_time: 40,
+            detail: [
+                {
+                    activation_condition: "적 전체에게",
+                    description: [
+                        "[공격력 149.85% 대미지]",
+                        "[자신 상태 별 추가 효과] [하위 효과 중복 적용]:",
+                        "타겟 마킹 1: [받는 대미지 39.96% ▲] [5초 유지]",
+                        "타겟 마킹 2: [공격력 299.7% 추가 대미지]",
+                        "타겟 마킹 3: [공격력 349.65% 추가 대미지]"
+                    ]
+                },
+                {
+                    activation_condition: "아군 전체에게",
+                    description: ["[풀 버스트 타임 지속 시간 5초 ▼]"]
+                }
+            ]
+        }
+    ],
+}
+export const rapunzel: NikkeInfo = {
+    company: "pilgrim",
+    grade: "SSR",
+    squad: "파이오니아",
+    class: "지원형",
+    enName: "Rapunzel",
+    krName: "라푼젤",
+    bustType: 1,
+    fullBodyImage: RapunzelFullBodyShot,
+    property: "철갑",
+    attack: {
+        gun_type: "런처",
+        max_shots: 6,
+        reload_time: 2.3,
+        operation_type: "차지형",
+        activation_condition: "대상에게",
+        description: [
+            "[공격력 62.95% 대미지]",
+            "차지 시간: 1초",
+            "풀 차지 대미지: 250% 대미지"
+        ]
+    },
+    skills: [
+        {
+            order_type: "one",
+            type: "패시브",
+            name: "세크리파이스",
+            detail: [
+                {
+                    activation_condition: "풀 차지 공격 시 체력이 가장 낮은 아군 3기에게",
+                    description: ["[시전자 최대 체력 비례 4.03% 회복]"]
+                }
+            ]
+        },
+        {
+            order_type: "two",
+            type: "액티브",
+            name: "디바인 블레스",
+            cooldown_time: 15,
+            detail: [
+                {
+                    activation_condition: "공격력이 가장 높은 아군 2기에게",
+                    description: [
+                        "[최대 체력 8.19% ▲] [20초 유지]",
+                        "[체력 회복량 13.65% ▲] [20초 유지]"
+                    ]
+                }
+            ]
+        },
+        {
+            order_type: "bust",
+            type: "액티브",
+            name: "가든 오브 샹그릴라",
+            cooldown_time: 60,
+            detail: [
+                {
+                    activation_condition: "아군 전체에게",
+                    description: ["[시전자 최대 체력 비례 40.83% 회복]"]
+                },
+                {
+                    activation_condition: "사망한 아군 무작위 1기에게",
+                    description: ["[체력 81.67%로 부활]"]
+                },
+                {
+                    activation_condition: "자신의 체력이 30% 이하라면 적 전체에게",
+                    description: ["[기절] [1초 유지]"]
+                }
+            ]
+        }
+    ],
+}
+export const scarlet: NikkeInfo = {
+    company: "pilgrim",
+    grade: "SSR",
+    squad: "파이오니아",
+    class: "화력형",
+    enName: "Scarlet",
+    krName: "홍련",
+    bustType: 3,
+    fullBodyImage: ScarletFullBodyShot,
+    property: "전격",
+    attack: {
+        gun_type: "소총",
+        max_shots: 20,
+        reload_time: 2.3,
+        operation_type: "일반형",
+        activation_condition: "대상에게",
+        description: ["[공격력 27.08% 대미지]"]
+    },
+    skills: [
+        {
+            order_type: "one",
+            type: "패시브",
+            name: "육참골단",
+            detail: [
+                {
+                    activation_condition: "일반 공격 10회 명중 시 자신에게",
+                    description: ["[공격력 23.15%▲] [5 중첩] [5초 유지]"]
+                }
+            ]
+        },
+        {
+            order_type: "two",
+            type: "패시브",
+            name: "검신합일",
+            detail: [
+                {
+                    activation_condition: "피격 시 30% 확률로 대상에게",
+                    description: ["[공격력 138.24% 대미지]"]
+                },
+                {
+                    activation_condition: "자신의 체력이 60% 이하일 때 한하여 자신에게",
+                    description: ["[크리티컬 대미지 6.61%▲] [지속]"]
+                }
+            ]
+        },
+        {
+            order_type: "bust",
+            type: "액티브",
+            name: "홍련일섬",
+            cooldown_time: 40,
+            detail: [
+                {
+                    activation_condition: "자신의 체력이 50% 이하라면 자신에게",
+                    description: ["[크리티컬 확률 19.57% ▲] [10초 유지]"]
+                },
+                {
+                    activation_condition: "적 전체에게",
+                    description: ["[공격력 849.15% 대미지]"]
+                }
+            ]
+        }
+    ],
+}
+export const harran: NikkeInfo = {
+    company: "pilgrim",
+    grade: "SSR",
+    squad: "인헤르트",
+    class: "화력형",
+    enName: "Harran",
+    krName: "하란",
+    bustType: 3,
+    fullBodyImage: HarranFullBodyShot,
+    property: "전격",
+    attack: {
+        gun_type: "저격소총",
+        max_shots: 6,
+        reload_time: 2.3,
+        operation_type: "차지형",
+        activation_condition: "대상에게",
+        description: [
+            "[공격력 70.89% 대미지]",
+            "차지 시간: 1초",
+            "풀 차지 대미지: 250% 대미지"
+        ]
+    },
+    skills: [
+        {
+            order_type: "one",
+            type: "패시브",
+            name: "역병 전이",
+            detail: [
+                {
+                    activation_condition: "공격 시 25% 확률로 대상에게",
+                    description: ["[바이러스 전이 : 공격력 17.28% 지속 대미지] [1초 간격] [5초 유지]"]
+                },
+                {
+                    activation_condition: "적 사망 시 대상이 바이러스 전이 상태였다면 가장 가까운 적 2기에게",
+                    description: ["[바이러스 전이 : 공격력 17.28% 지속 대미지] [1초 간격] [5초 유지]"]
+                }
+            ]
+        },
+        {
+            order_type: "two",
+            type: "패시브",
+            name: "포식",
+            detail: [
+                {
+                    activation_condition: "풀 차지 공격시 자신에게",
+                    description: [
+                        "[관통 특화] [1발 유지]",
+                        "[크리티컬 확률 2.95% ▲] [1발 유지]"
+                    ]
+                },
+                {
+                    activation_condition: "적 처치 시 자신에게",
+                    description: ["[공격력 3.02% ▲] [15 중첩] [10초 유지]"]
+                }
+            ]
+        },
+        {
+            order_type: "bust",
+            type: "액티브",
+            name: "사멸의 날",
+            cooldown_time: 40,
+            detail: [
+                {
+                    activation_condition: "적 전체에게",
+                    description: ["[공격력 999% 대미지]"]
+                }
+            ]
+        }
+    ],
+}
+export const noah: NikkeInfo = {
+    company: "pilgrim",
+    grade: "SSR",
+    squad: "인헤르트",
+    class: "방어형",
+    enName: "Noah",
+    krName: "노아",
+    bustType: 2,
+    fullBodyImage: NoahFullBodyShot,
+    property: "풍압",
+    attack: {
+        gun_type: "런처",
+        max_shots: 6,
+        reload_time: 2.5,
+        operation_type: "차지형",
+        activation_condition: "대상에게",
+        description: [
+            "[공격력 32.02% 대미지]",
+            "차지 시간: 1초",
+            "풀 차지 대미지: 250% 대미지"
+        ]
+    },
+    skills: [
+        {
+            order_type: "one",
+            type: "패시브",
+            name: "아파 보이네?",
+            detail: [
+                {
+                    activation_condition: "피격 시 10% 확률로 아군 전체에게",
+                    description: ["[피격 대미지 8% ▼] [10초 유지]"]
+                }
+            ]
+        },
+        {
+            order_type: "two",
+            type: "패시브",
+            name: "때려볼래?",
+            detail: [
+                {
+                    activation_condition: "풀 차지 공격 시 대상에게",
+                    description: [
+                        "[도발] [2초 유지]",
+                        "[공격력 10% ▼] [2초 유지]"
+                    ]
+                },
+                {
+                    activation_condition: "적 처치 시 자신에게",
+                    description: ["[공격력 3.02% ▲] [15 중첩] [10초 유지]"]
+                }
+            ]
+        },
+        {
+            order_type: "bust",
+            type: "액티브",
+            name: "약오르죠?",
+            cooldown_time: 40,
+            detail: [
+                {
+                    activation_condition: "자신에게",
+                    description: ["[주목: 적 전체 도발] [10초 유지]"]
+                },
+                {
+                    activation_condition: "아군 전체에게",
+                    description: [
+                        "[무적] [3초 유지]",
+                        "[방어력 99% ▲] [10초 유지]"
+                    ]
+                }
+            ]
+        }
+    ],
+}
+export const modernia: NikkeInfo = {
+    company: "pilgrim",
+    grade: "SSR",
+    squad: "헬레틱",
+    class: "화력형",
+    enName: "Modernia",
+    krName: "모더니아",
+    bustType: 3,
+    fullBodyImage: ModerniaFullBodyShot,
+    property: "작열",
+    attack: {
+        gun_type: "머신건",
+        max_shots: 300,
+        reload_time: 2.3,
+        operation_type: "일반형",
+        activation_condition: "대상에게",
+        description: ["[공격력 7.71% 대미지]"]
+    },
+    skills: [
+        {
+            order_type: "one",
+            type: "패시브",
+            name: "고속진화",
+            detail: [
+                {
+                    activation_condition: "일반 공격 명중 시 대상에게",
+                    description: ["[공격력 3.03% 추가 데미지]"]
+                },
+                {
+                    activation_condition: "일반 공격 200회 명중 시 자신에게",
+                    description: ["[크리티컬 데미지 14.25%▲] [5중첩] [10초 유지]"]
+                }
+            ]
+        },
+        {
+            order_type: "two",
+            type: "패시브",
+            name: "대도약",
+            detail: [
+                {
+                    activation_condition: "풀 버스트 타임 시작 시 아군 전체에게",
+                    description: ["[명중률 8.56%▲] [15초 유지]"]
+                },
+                {
+                    activation_condition: "일반 공격 200회 명중 시 자신이 명중률 증가 상태라면 자신에게",
+                    description: ["[공격력 29.38%▲] [10초 유지]"]
+                }
+            ]
+        },
+        {
+            order_type: "bust",
+            type: "액티브",
+            name: "신세계",
+            cooldown_time: 40,
+            detail: [
+                {
+                    activation_condition: "아군 전체에게",
+                    description: ["[풀 버스트 타임 지속 시간 5초 ▲]"]
+                },
+                {
+                    activation_condition: "자신에게",
+                    description: ["[장탄수 무한] [15초 유지]"]
+                }
+            ]
+        }
+    ],
+}
 
 const nikkesArray: NikkeInfo[] =
     [
@@ -4477,7 +4966,12 @@ const nikkesArray: NikkeInfo[] =
         // SR
         anis, belorta, mica, neve,
         // R
-        idollFlower, idollOcean, idollSun
+        idollFlower, idollOcean, idollSun,
+
+        // pilgrim
+        snowWhite, rapunzel, scarlet,
+        isabel, harran, noah,
+        modernia
     ]
 export default nikkesArray;
 
