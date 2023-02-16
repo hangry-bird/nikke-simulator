@@ -26,15 +26,11 @@ interface DrawCard10Props {
     populateDrawList: NikkeInfo_Light[]
 }
 const DrawCard10 = ({ populateDrawList }: DrawCard10Props) => {
-    // const { randomDraw, setRandomDraw } = useDraw();
-    // console.log(populateDrawList)
     return (
         <DrawCard10Container>
             <DrawCard10Wrap>
             {
                 populateDrawList.map((nikke, index) => {
-                    // randomDraw[index]
-                    console.log(nikke)
                     return(
                         <DrawCard 
                             key={index}

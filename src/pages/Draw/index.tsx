@@ -24,10 +24,19 @@ import useDraw from '@stores/Draw'
 
 
 const DrawPage = () => {
-    const { populateDrawList, setRandomDraw, setTenRandomDraw } = useDraw();
+    const { 
+        totalDrawCount, ssrProbabilityCount, pilgrimProbabilityCount,
+        populateDrawList, 
+        setRandomDraw, setTenRandomDraw 
+    } = useDraw();
 
     return (
         <DrawContainer>
+            <StatisticsContainer>
+                <Label>총 모집 수: {totalDrawCount}</Label>
+                <Label>SSR: {ssrProbabilityCount} / {((ssrProbabilityCount / totalDrawCount) * 100 || 0).toFixed(2)}%</Label>
+                <Label>필그림: {pilgrimProbabilityCount} / {((pilgrimProbabilityCount / totalDrawCount) * 100 || 0).toFixed(2)}%</Label>
+            </StatisticsContainer>
             <DrawCard10 
                 populateDrawList={populateDrawList}
             />
@@ -56,6 +65,16 @@ const DrawContainer = styled.div`
     
     width: 100%;
     height: 100%;
+`
+const StatisticsContainer = styled.div`
+    display: flex;
+    justify-content: center;
+
+    width: 100%;
+    margin-bottom: 100px;
+    & > label:not(:last-of-type) {
+        margin-right: 50px;
+    }
 `
 const DrawButtonContainer = styled.div`
     display: flex;

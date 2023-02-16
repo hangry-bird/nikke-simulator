@@ -5040,6 +5040,6 @@ export const tetraNikkes = drawingLightWeightArray.filter(nikke => nikke.company
 export const missilisNikkes = drawingLightWeightArray.filter(nikke => nikke.company === "missilis");
 export const pilgrimNikkes = drawingLightWeightArray.filter(nikke => nikke.company === "pilgrim");
 
-export const ssrNikkes = drawingLightWeightArray.filter(nikke => nikke.grade === "SSR");
+export const ssrNikkes = drawingLightWeightArray.filter(nikke => nikke.grade === "SSR" && nikke.company !== "pilgrim");
 export const srNikkes = drawingLightWeightArray.filter(nikke => nikke.grade === "SR");
 export const rNikkes = drawingLightWeightArray.filter(nikke => nikke.grade === "R");

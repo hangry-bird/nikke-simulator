@@ -13,7 +13,7 @@ const gradeDraw = () => {
   const randomNumber = Math.random();
 
   if (randomNumber < PILGRIM_PERCENTAGE) {
-    return 'PILFRIM'
+    return 'PILGRIM'
   }
   else if (randomNumber < SSR_PERCENTAGE) {
     return 'SSR';
@@ -35,8 +35,8 @@ const convertGradeToNikke = (grade: string) => {
 
 interface DrawState {
   totalDrawCount: number;
-  ssrProbabilityPercent: number;
-  pilgrimProbabilityPercent: number;
+  ssrProbabilityCount: number;
+  pilgrimProbabilityCount: number;
 
   populateDrawList: NikkeInfo_Light[];
 
@@ -46,24 +46,50 @@ interface DrawState {
 
 const useCounter = create<DrawState>(set => ({
   totalDrawCount: 0,
-  ssrProbabilityPercent: 0,
-  pilgrimProbabilityPercent: 0,
+  ssrProbabilityCount: 0,
+  pilgrimProbabilityCount: 0,
 
   populateDrawList: [],
+
 
   setRandomDraw: () => set(state => {
     const grade = gradeDraw();
     const drawNikke = [convertGradeToNikke(grade)]
-    return { ...state, populateDrawList: drawNikke }
+
+    const totalDrawCount = state.totalDrawCount + 1;
+    const ssrProbabilityCount = state.ssrProbabilityCount + ((grade === "SSR" || grade === "PILGRIM") ? 1 : 0);
+    const pilgrimProbabilityCount = state.pilgrimProbabilityCount + (grade === "PILGRIM" ? 1 : 0);
+
+    return { 
+      ...state,
+      totalDrawCount: totalDrawCount,
+      ssrProbabilityCount: ssrProbabilityCount,
+      pilgrimProbabilityCount: pilgrimProbabilityCount,
+      populateDrawList: drawNikke 
+    }
   }),
 
   setTenRandomDraw: () => set(state => {
-    const randomGradeList = Array(10).fill(undefined).map(_ => {
+    let totalDrawCount = 10;
+    let ssrCount = 0;
+    let pilgrimCount = 0;
+
+    const randomDrawList = Array(10).fill(undefined).map(_ => {
       const grade = gradeDraw();
-      const drawNikke = convertGradeToNikke(grade)
+      const drawNikke = convertGradeToNikke(grade);
+
+      ssrCount += (grade === "SSR" || grade === "PILGRIM") ? 1 : 0;
+      pilgrimCount += grade === "PILGRIM" ? 1 : 0
+
       return drawNikke;
     })
-    return { ...state, populateDrawList: randomGradeList }
+    return { 
+      ...state, 
+      totalDrawCount: state.totalDrawCount + totalDrawCount,
+      ssrProbabilityCount: state.ssrProbabilityCount + ssrCount,
+      pilgrimProbabilityCount: state.pilgrimProbabilityCount + pilgrimCount,
+      populateDrawList: randomDrawList 
+    }
   })
 }));
 
