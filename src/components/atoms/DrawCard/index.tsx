@@ -64,7 +64,7 @@ const DrawCardContainer = styled.div<DrawCardProps>`
 const ImageWrap = styled.div`
     width: 120px;
     height: 220px;
-    background-color: #E2E2E2;
+    background-color: #FFF;
 
     overflow: hidden;
 `
