@@ -1,6 +1,6 @@
 import create from 'zustand';
-import { NikkeInfo } from '@src/NikkeDatas/interfaces';
-import nikkesArray from '@src/NikkeDatas';
+import { NikkeInfo } from '@src/datas/interfaces';
+import nikkesArray from '@src/datas';
 
 
 interface DrawState {

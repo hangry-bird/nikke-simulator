@@ -1,5 +1,5 @@
 import create from 'zustand';
-import { NikkeInfo } from '@src/NikkeDatas/interfaces';
+import { NikkeInfo } from '@src/datas/interfaces';
 
 
 interface MainState {

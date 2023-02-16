@@ -1,7 +1,7 @@
 import styled from 'styled-components'
 
-import { nikkesObject } from '@src/NikkeDatas/index'
-import { NikkeInfo } from '@src/NikkeDatas/interfaces';
+import { nikkesObject } from '@src/datas/index'
+import { NikkeInfo } from '@src/datas/interfaces';
 // images
 import AR from '@images/weapon/ar.png'
 import MG from '@images/weapon/mg.png'

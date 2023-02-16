@@ -4,8 +4,8 @@ import Toggle from 'react-toggle'
 
 import "react-toggle/style.css"
 
-import nikkeList from '@src/NikkeDatas/index';
-import { NikkeInfo } from '@src/NikkeDatas/interfaces';
+import nikkeList from '@src/datas/index';
+import { NikkeInfo } from '@src/datas/interfaces';
 
 // atoms
 import Portrait from '@src/components/atoms/Portrait'
