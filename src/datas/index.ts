@@ -1,4 +1,4 @@
-import { NikkeInfo } from './interfaces'
+import { NikkeInfo, NikkeInfo_Light } from './interfaces'
 // images
 // elysion
 import RapiFullBodyShot from '@images/nikke/fullBody/rapi.png'

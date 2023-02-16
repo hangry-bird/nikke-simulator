@@ -20,6 +20,12 @@ interface Skill {
     detail: SkillDetail[]
 }
 
+export interface NikkeInfo_Light{
+    company: "elysion" | "tetra" | "missilis" | "pilgrim";
+    grade: "SSR" | "SR" | "R";
+    krName: string,
+    fullBodyImage: string,
+}
 export interface NikkeInfo {
     company: "elysion" | "tetra" | "missilis" | "pilgrim";
     grade: "SSR" | "SR" | "R";

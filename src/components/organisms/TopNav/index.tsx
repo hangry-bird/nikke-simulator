@@ -58,6 +58,7 @@ const TopNavContainer = styled.div`
     justify-content: space-between;
 
     width: 100%;
+    min-width: 660px;
     height: 50px;
     padding: 14px;
 

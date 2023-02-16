@@ -1,5 +1,7 @@
 import { ReactNode } from 'react'
 import styled, { css } from 'styled-components'
+
+import { NikkeInfo, NikkeInfo_Light } from '@src/datas/interfaces';
 import Img from '@src/components/atoms/Image'
 import Label from '@src/components/atoms/Label'
 // images
@@ -14,20 +16,19 @@ type DrawCardProps = {
 }
 
 const DrawCard = ({ 
-    grade="SSR",
-    image="",
-    name="엠마",
-    ...rest
-}: DrawCardProps) => {
+    grade,
+    fullBodyImage,
+    krName,
+    company
+}: NikkeInfo_Light) => {
     return(
         <DrawCardContainer
             grade={grade}
-            {...rest}
         >
             <ImageWrap>
-                <Img src={EmmaFullBodyShot} alt={"draw card"} />
+                <Img src={fullBodyImage} alt={`${krName} image`} />
             </ImageWrap>
-            <Label bold fs18 center>{name}</Label>
+            <Label bold fs18 center>{krName}</Label>
             <BackgroundShadow grade={grade} />
         </DrawCardContainer>
     )
@@ -46,18 +47,16 @@ const DrawCardContainer = styled.div<DrawCardProps>`
     min-width: 120px;
     height: 220px;
     
-    /* border: ${({grade}) => grade === "R" && "1px solid #0b1bf8"};
-    border: ${({grade}) => grade === "SR" && "1px solid #7a0bf8"};
-    border: ${({grade}) => grade === "SSR" && "1px solid #f8a50b"}; */
-
+    ${({grade}) => grade === "SSR" && css`
+        box-shadow: 0px 0px 5px 1px #f8a50b;
+    `}
+    ${({grade}) => grade === "SR" && css`
+        box-shadow: 0px 0px 5px 1px #7a0bf8;
+    `}
     ${({grade}) => grade === "R" && css`
-        /* border: 1px solid #0b1bf8; */
         box-shadow: 0px 0px 5px 1px #0b1bf8;
     `}
-    /* border: 2px solid #D8D8D8; */
     background-color: #D8D8D8;
-    /* box-shadow: 0px 0px 5px 1px #222222; */
-
     cursor: pointer;
 `
 
@@ -80,8 +79,6 @@ const BackgroundShadow = styled.div<DrawCardProps>`
     height: 260px;
 
     ${({grade}) => grade === "R" && css`
-        /* border: 1px solid #0b1bf8;
-        box-shadow: 0px 0px 5px 1px #0b1bf8; */
         background: linear-gradient( to bottom, #fff, #0b1bf8 20%, #fff );
     `}
     ${({grade}) => grade === "SR" && css`
@@ -90,8 +87,4 @@ const BackgroundShadow = styled.div<DrawCardProps>`
     ${({grade}) => grade === "SSR" && css`
         background: linear-gradient( to bottom, #fff, #f8a50b 20%, #fff );
     `}
-
-    /* background: ${({grade}) => grade === "R" && "linear-gradient( to bottom, #fff, #0b1bf8, #fff )"};
-    background: ${({grade}) => grade === "SR" && "linear-gradient( to bottom, #fff, #7a0bf8, #fff )"};
-    background: ${({grade}) => grade === "SSR" && "linear-gradient( to bottom, #fff, #f8a50b, #fff )"}; */
 `
