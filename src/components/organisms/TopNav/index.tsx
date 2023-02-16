@@ -38,6 +38,11 @@ const TopNav = () => {
                     onClick={() => movePage('/draw')}
                 >모집 시뮬레이터
                 </PageName>
+                <PageName 
+                    target="_blank"
+                    href="https://github.com/hangry-bird/nikke-simulator/issues" 
+                >버그/이슈 신고
+                </PageName>
             </PageRouteContainer>
         </TopNavContainer>
     )
@@ -70,16 +75,17 @@ const LogoWrap = styled.div`
 const PageRouteContainer = styled.ol`
     display: flex;
 
-    & > ul:not(:first-of-type){
+    & > a:not(:first-of-type){
         margin-left: 30px;
     }
 `
 type PageNameProps = {
     active?: boolean;
 }
-const PageName = styled.ul<PageNameProps>`
+const PageName = styled.a<PageNameProps>`
     display: flex;
     color: ${({active}) => active ? "#fff" : "#d8d8d8"};
     font-weight: ${({active}) => active && "700"};
     cursor: pointer;
+    text-decoration: none;
 `
