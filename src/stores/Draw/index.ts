@@ -1,6 +1,6 @@
 import create from 'zustand';
 import { NikkeInfo_Light } from '@src/datas/interfaces';
-import { pilgrimNikkes, ssrNikkes, srNikkes, rNikkes } from '@src/datas';
+import { pilgrimNikkes, ssrDrawNikkes, srDrawNikkes, rDrawNikkes } from '@src/datas';
 
 
 const SSR_PERCENTAGE = 0.034995 // 4%
@@ -26,7 +26,7 @@ const gradeDraw = () => {
 
 
 const convertGradeToNikke = (grade: string) => {
-  const targetNikkes = grade === "PILGRIM" ? pilgrimNikkes : grade === "SSR" ? ssrNikkes : grade === "SR" ? srNikkes : rNikkes;
+  const targetNikkes = grade === "PILGRIM" ? pilgrimNikkes : grade === "SSR" ? ssrDrawNikkes : grade === "SR" ? srDrawNikkes : rDrawNikkes;
   const randomIndex = Math.floor(Math.random() * targetNikkes.length);
 
   return targetNikkes[randomIndex]

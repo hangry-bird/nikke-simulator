@@ -33,6 +33,7 @@ export interface NikkeInfo {
     squad: string;
     enName: string;
     krName: string;
+    isDraw: boolean;
     property: "작열" | "수냉" | "철갑" | "풍압" | "전격";
     fullBodyImage: string;
 
