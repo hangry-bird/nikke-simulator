@@ -27,7 +27,7 @@ export interface NikkeInfo_Light{
     fullBodyImage: string,
 }
 export interface NikkeInfo {
-    company: "elysion" | "tetra" | "missilis" | "pilgrim";
+    company: "elysion" | "tetra" | "missilis" | "pilgrim" | "abnormal";
     grade: "SSR" | "SR" | "R";
     class: "화력형" | "지원형" | "방어형";
     squad: string;

@@ -80,6 +80,9 @@ import ScarletFullBodyShot from '@images/nikke/fullBody/scarlet.png'
 import HarranFullBodyShot from '@images/nikke/fullBody/harran.png'
 import NoahFullBodyShot from '@images/nikke/fullBody/noah.png'
 import ModerniaFullBodyShot from '@images/nikke/fullBody/modernia.png'
+// abnormal
+import MakimaFullBodyShot from '@images/nikke/fullBody/makima.png'
+import PowerFullBodyShot from '@images/nikke/fullBody/power.png'
 
 
 // elysion
@@ -4994,6 +4997,148 @@ export const modernia: NikkeInfo = {
         }
     ],
 }
+// abnormal
+export const makima: NikkeInfo = {
+    company: "abnormal",
+    grade: "SSR",
+    squad: "데블 헌터",
+    class: "방어형",
+    enName: "Makima",
+    krName: "마키마",
+    isDraw: false,
+    bustType: 2,
+    fullBodyImage: MakimaFullBodyShot,
+    property: "수냉",
+    attack: {
+        gun_type: "기관단총",
+        max_shots: 120,
+        reload_time: 1.5,
+        operation_type: "일반형",
+        activation_condition: "대상에게",
+        description: ["[공격력 8.73% 대미지]"]
+    },
+    skills: [
+        {
+            order_type: "one",
+            type: "패시브",
+            name: "나에게 활약을 보여줄 수 있겠니?",
+            detail: [
+                {
+                    activation_condition: "20회 피격 시 아군 전체에게",
+                    description: [
+                        "[재장전 속도: 36.96%▲] [10초 유지]",
+                        "[방어력: 14.78%▲] [10초 유지]"
+                    ]
+                }
+            ]
+        },
+        {
+            order_type: "two",
+            type: "패시브",
+            name: "발각된 모양이네",
+            detail: [
+                {
+                    activation_condition: "일반 공격 120회 공격 시 자신에게",
+                    description: ["[주목 : 적 전체 도발] [3초 유지]"]
+                },
+                {
+                    activation_condition: "전투불능에 이르는 공격에 피격 시 자신에게",
+                    description: [
+                        "[불굴] [7초 유지] [전투 중 1회 발동]",
+                        "[버스트 스킬 쿨타임 11.58초 ▼]"
+                    ]
+                }
+            ]
+        },
+        {
+            order_type: "bust",
+            type: "액티브",
+            name: "조용히 해주겠니?",
+            cooldown_time: 20,
+            detail: [
+                {
+                    activation_condition: "자신에게",
+                    description: [
+                        "[관통 특화] [10초 유지]",
+                        "[공격 대미지 비례 34.02% 회복] [10초 유지]"
+                    ]
+                },
+                {
+                    activation_condition: "자신이 불굴 상태라면 자신에게",
+                    description: ["[체력 회복량 41.02%▲] [10초 유지]"]
+                }
+            ]
+        }
+    ],
+}
+export const power: NikkeInfo = {
+    company: "abnormal",
+    grade: "SSR",
+    squad: "데블 헌터",
+    class: "화력형",
+    enName: "power",
+    krName: "파워",
+    isDraw: false,
+    bustType: 3,
+    fullBodyImage: PowerFullBodyShot,
+    property: "작열",
+    attack: {
+        gun_type: "런처",
+        max_shots: 6,
+        reload_time: 2,
+        operation_type: "차지형",
+        activation_condition: "대상에게",
+        description: [
+            "[공격력 61.3% 대미지]",
+            "차지 시간: 1초",
+            "풀 차지 대미지: 250% 대미지"
+        ]
+    },
+    skills: [
+        {
+            order_type: "one",
+            type: "패시브",
+            name: "피의 마인",
+            detail: [
+                {
+                    activation_condition: "풀 차지 공격 시 자신에게",
+                    description: ["[피의 마인 : 공격력 6.4%▲] [5 중첩] [10초 유지]"]
+                }
+            ]
+        },
+        {
+            order_type: "two",
+            type: "패시브",
+            name: "피의 폭발",
+            detail: [
+                {
+                    activation_condition: "일반 공격 18회 공격 시 자신이 피의 마인 최대 중첩 상태라면 자신에게",
+                    description: [
+                        "[폭발 범위 38.61%▲] [10초 유지]",
+                        "[탄환 충전 100%] [전투 중 1회 발동]"
+                    ]
+                }
+            ]
+        },
+        {
+            order_type: "bust",
+            type: "액티브",
+            name: "피의 해머",
+            cooldown_time: 40,
+            detail: [
+                {
+                    activation_condition: "공격력이 가장 높은 적 1기에게",
+                    description: ["[공격력 1584% 대미지]"]
+                },
+                {
+                    activation_condition: "자신이 피의 마인 최대 중첩 상태라면 동일 적 대상에게",
+                    description: ["[공격력 1584% 추가 대미지]"]
+                }
+            ]
+        }
+    ],
+}
+
 
 const nikkesArray: NikkeInfo[] =
     [
@@ -5047,7 +5192,10 @@ const nikkesArray: NikkeInfo[] =
         // pilgrim
         snowWhite, rapunzel, scarlet,
         isabel, harran, noah,
-        modernia
+        modernia,
+
+        // abnormal
+        makima, power
     ]
 export default nikkesArray;
 
