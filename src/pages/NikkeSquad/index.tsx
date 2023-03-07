@@ -28,6 +28,7 @@ const NikkeSquadPage = () => {
 
     const { squadNikkes, addNikke, deleteNikke } = useSquad();
 
+    const [searchWord, setSearchWord] = useState("");
     const [bustFilter, setBustFilter] = useState<BustFilterType>(0);
 
     useEffect(() => {
@@ -78,7 +79,12 @@ const NikkeSquadPage = () => {
                 />
 
                 <NikkeListContainer>
-                    <BustFilterWrap>
+                    <FilterWrap>
+                        <NikkeSearchInput 
+                            onChange={(e) => setSearchWord(e.target.value)} 
+                            placeholder="검색 니케 입력"
+                        />
+
                         <Label 
                             style={bustTypeStyled(1)}
                             onClick={() => handleClickBustTypeFilter(1)}>I</Label>
@@ -88,10 +94,11 @@ const NikkeSquadPage = () => {
                         <Label 
                             style={bustTypeStyled(3)}
                             onClick={() => handleClickBustTypeFilter(3)}>III</Label>
-                    </BustFilterWrap>
+                    </FilterWrap>
 
                     <PopulateNikkes
                         nikkes={nikkeList}
+                        searchWord={searchWord}
                         squadNikkes={squadNikkes}
                         bustFilter={bustFilter}
                         onClick={(nikke: NikkeInfo) => handleNikkeClick(nikke)}
@@ -119,12 +126,19 @@ export default NikkeSquadPage;
 
 type NikkeProps = {
     nikkes: NikkeInfo[];
+    searchWord: string;
     squadNikkes: NikkeInfo[];
     bustFilter: 0 | 1 | 2 | 3;
     onClick: (nikke: NikkeInfo) => void;
 }
 
-const PopulateNikkes: React.FC<NikkeProps> = ({ nikkes, squadNikkes, bustFilter, onClick }) => {
+const PopulateNikkes: React.FC<NikkeProps> = ({ 
+    nikkes, 
+    searchWord,
+    squadNikkes, 
+    bustFilter, 
+    onClick 
+}) => {
 
     // 이름 오름차순 정렬
     nikkes = nikkes.sort((a, b) => {
@@ -137,8 +151,14 @@ const PopulateNikkes: React.FC<NikkeProps> = ({ nikkes, squadNikkes, bustFilter,
         <>
             {
                 nikkes.map(nikke => {
-                    const hasNikkeIndex = squadNikkes.findIndex(squadNikke => squadNikke.enName === nikke.enName)
+                    const hasSquadNikke = squadNikkes.findIndex(squadNikke => squadNikke.enName === nikke.enName)
 
+                    // 검색어에 포함 여부
+                    if(nikke.krName.includes(searchWord) === false){
+                        return(<></>)
+                    }
+
+                    // Bust 선택
                     if(bustFilter !== 0 && nikke.bustType !== bustFilter){
                         return(<></>)
                     }
@@ -151,7 +171,7 @@ const PopulateNikkes: React.FC<NikkeProps> = ({ nikkes, squadNikkes, bustFilter,
                             <Label bold>{nikke.krName}</Label>
                             <Img src={nikke.fullBodyImage} alt={`${nikke.enName} 이미지`} />
                             {
-                                hasNikkeIndex >= 0 &&
+                                hasSquadNikke >= 0 &&
                                 <PortraitActiveWrap>
                                     <PortraitActive />
                                 </PortraitActiveWrap>
@@ -189,7 +209,7 @@ const SkillDescriptionContainer = styled.div`
     background-color: #fff;
     overflow: auto;
 `
-const BustFilterWrap = styled.div`
+const FilterWrap = styled.div`
     display: flex;
     justify-content: flex-end;
 
@@ -210,6 +230,13 @@ const BustFilterWrap = styled.div`
         text-align: center;
         cursor: pointer;
     }
+`
+const NikkeSearchInput = styled.input`
+    width: 100px;
+    height: 22px;
+    padding: 4px;
+
+    border-radius: 4px;
 `
 const NikkeListContainer = styled.div`
     display: flex;
