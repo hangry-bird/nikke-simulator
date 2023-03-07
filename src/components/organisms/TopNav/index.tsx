@@ -24,7 +24,7 @@ const TopNav = () => {
         <TopNavContainer>
             <LogoWrap>
                 <Img src={ShiftyLogo} width={"20px"} alt="shifty logo" />
-                <Label color={"#fff"}>Nikke Simulator</Label>
+                <Label pointer color={"#fff"} onClick={() => movePage('/')}>Nikke Simulator</Label>
             </LogoWrap>
 
             <PageRouteContainer>
