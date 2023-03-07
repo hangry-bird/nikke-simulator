@@ -5252,7 +5252,7 @@ export const nikkesObject: {
 }
 
 
-export const drawingLightWeightArray = nikkesArray.map(nikke => ({
+export const drawingLightWeightArray = nikkesArray.map((nikke: NikkeInfo): NikkeInfo_Light => ({
         company: nikke.company,
         grade: nikke.grade,
         krName: nikke.krName,

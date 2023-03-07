@@ -54,7 +54,7 @@ const useCounter = create<DrawState>(set => ({
 
   setRandomDraw: () => set(state => {
     const grade = gradeDraw();
-    const drawNikke = [convertGradeToNikke(grade)]
+    const drawNikke = convertGradeToNikke(grade)
 
     const totalDrawCount = state.totalDrawCount + 1;
     const ssrProbabilityCount = state.ssrProbabilityCount + ((grade === "SSR" || grade === "PILGRIM") ? 1 : 0);
@@ -65,7 +65,7 @@ const useCounter = create<DrawState>(set => ({
       totalDrawCount: totalDrawCount,
       ssrProbabilityCount: ssrProbabilityCount,
       pilgrimProbabilityCount: pilgrimProbabilityCount,
-      populateDrawList: drawNikke 
+      populateDrawList: [drawNikke]
     }
   }),
 

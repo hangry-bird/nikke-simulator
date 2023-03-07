@@ -21,10 +21,11 @@ interface Skill {
 }
 
 export interface NikkeInfo_Light{
-    company: "elysion" | "tetra" | "missilis" | "pilgrim";
+    company: "elysion" | "tetra" | "missilis" | "pilgrim" | "abnormal";
     grade: "SSR" | "SR" | "R";
-    krName: string,
-    fullBodyImage: string,
+    krName: string;
+    isDraw?: boolean;
+    fullBodyImage: string;
 }
 export interface NikkeInfo {
     company: "elysion" | "tetra" | "missilis" | "pilgrim" | "abnormal";
